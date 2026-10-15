@@ -1,0 +1,50 @@
+{
+  "name": "@fossil-design/eslint-config",
+  "version": "0.2.0",
+  "description": "Shared ESLint config for Fossil Design: layout goes through Box, and every disable says why.",
+  "keywords": [
+    "design-system",
+    "eslint",
+    "eslintconfig",
+    "eslint-config"
+  ],
+  "homepage": "https://github.com/ibrahimmoazzam/fossil-design/tree/main/packages/eslint-config#readme",
+  "bugs": "https://github.com/ibrahimmoazzam/fossil-design/issues",
+  "license": "MIT",
+  "author": "Ibrahim Moazzam (https://github.com/ibrahimmoazzam)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ibrahimmoazzam/fossil-design.git",
+    "directory": "packages/eslint-config"
+  },
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "generate": "node --experimental-strip-types --disable-warning=ExperimentalWarning ../../scripts/brand.ts src/generated/brand.ts",
+    "build": "node -e \"fs.rmSync('dist', { recursive: true, force: true })\" && pnpm run generate && tsc -p tsconfig.build.json",
+    "typecheck": "pnpm run generate && tsc",
+    "prepack": "pnpm run build"
+  },
+  "dependencies": {
+    "@eslint-community/eslint-plugin-eslint-comments": "^4.8.1"
+  },
+  "peerDependencies": {
+    "eslint": "^10.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^10.12.0",
+    "typescript": "catalog:",
+    "typescript-eslint": "^8.71.0"
+  }
+}

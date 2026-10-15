@@ -1,0 +1,37 @@
+{
+  "space": {
+    "$type": "dimension",
+    "2xs": {
+      "$value": "{base.space.050}",
+      "$description": "Padding and gap: 4px."
+    },
+    "xs": {
+      "$value": "{base.space.100}",
+      "$description": "Padding and gap: 8px."
+    },
+    "s": {
+      "$value": "{base.space.150}",
+      "$description": "Padding and gap: 12px."
+    },
+    "m": {
+      "$value": "{base.space.200}",
+      "$description": "Padding and gap: 16px."
+    },
+    "l": {
+      "$value": "{base.space.300}",
+      "$description": "Padding and gap: 24px."
+    },
+    "xl": {
+      "$value": "{base.space.400}",
+      "$description": "Padding and gap: 32px."
+    },
+    "2xl": {
+      "$value": "{base.space.600}",
+      "$description": "Padding and gap: 48px."
+    },
+    "3xl": {
+      "$value": "{base.space.1000}",
+      "$description": "Padding and gap: 80px."
+    }
+  }
+}

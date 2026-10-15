@@ -1,0 +1,60 @@
+{
+  "name": "@fossil-design/tokens",
+  "version": "0.6.2",
+  "description": "Design tokens for Fossil Design: DTCG source files and the Style Dictionary build that turns them into CSS, JSON and TypeScript.",
+  "keywords": [
+    "design-system",
+    "design-tokens",
+    "dtcg",
+    "style-dictionary",
+    "css-custom-properties"
+  ],
+  "homepage": "https://github.com/ibrahimmoazzam/fossil-design/tree/main/packages/tokens#readme",
+  "bugs": "https://github.com/ibrahimmoazzam/fossil-design/issues",
+  "license": "MIT",
+  "author": "Ibrahim Moazzam (https://github.com/ibrahimmoazzam)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ibrahimmoazzam/fossil-design.git",
+    "directory": "packages/tokens"
+  },
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./tokens.css": {
+      "types": "./dist/tokens.css.d.ts",
+      "default": "./dist/tokens.css"
+    },
+    "./tokens.json": {
+      "types": "./dist/tokens.json.d.cts",
+      "default": "./dist/tokens.json"
+    },
+    "./lint.json": {
+      "types": "./dist/lint.json.d.cts",
+      "default": "./dist/lint.json"
+    }
+  },
+  "sideEffects": [
+    "*.css"
+  ],
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "validate": "node --experimental-strip-types --disable-warning=ExperimentalWarning scripts/validate.ts",
+    "build": "node --experimental-strip-types --disable-warning=ExperimentalWarning scripts/build.ts && tsc -p tsconfig.build.json",
+    "deprecations": "node --experimental-strip-types --disable-warning=ExperimentalWarning scripts/deprecations.ts",
+    "typecheck": "tsc",
+    "prepack": "pnpm run build"
+  },
+  "devDependencies": {
+    "style-dictionary": "^5.5.5",
+    "typescript": "catalog:"
+  }
+}

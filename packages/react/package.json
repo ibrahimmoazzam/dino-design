@@ -1,0 +1,83 @@
+{
+  "name": "@fossil-design/react",
+  "version": "0.5.1",
+  "description": "React components for Fossil Design, styled only with design tokens and precompiled to plain JavaScript and one stylesheet.",
+  "keywords": [
+    "design-system",
+    "react",
+    "components",
+    "css-modules",
+    "accessibility"
+  ],
+  "homepage": "https://github.com/ibrahimmoazzam/fossil-design/tree/main/packages/react#readme",
+  "bugs": "https://github.com/ibrahimmoazzam/fossil-design/issues",
+  "license": "MIT",
+  "author": "Ibrahim Moazzam (https://github.com/ibrahimmoazzam)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ibrahimmoazzam/fossil-design.git",
+    "directory": "packages/react"
+  },
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./style.css": {
+      "types": "./dist/style.css.d.ts",
+      "default": "./dist/style.css"
+    }
+  },
+  "sideEffects": [
+    "*.css"
+  ],
+  "bin": {
+    "fossil-agents-md": "./dist/bin/agents-md.js"
+  },
+  "files": [
+    "dist",
+    "docs",
+    "guidelines"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "generate": "node --experimental-strip-types --disable-warning=ExperimentalWarning scripts/generate.ts && vite-css-modules",
+    "build": "node -e \"fs.rmSync('dist', { recursive: true, force: true })\" && pnpm run generate && vite build && tsc -p tsconfig.build.json && tsc -p tsconfig.bin.json && pnpm run docs",
+    "docs": "node --experimental-strip-types --disable-warning=ExperimentalWarning scripts/docs.ts",
+    "typecheck": "pnpm run generate && tsc",
+    "storybook": "storybook dev --port 6006",
+    "build-storybook": "storybook build && node --experimental-strip-types --disable-warning=ExperimentalWarning scripts/site-meta.ts",
+    "prepack": "pnpm run build"
+  },
+  "dependencies": {
+    "@floating-ui/react": "^0.27.20",
+    "@fossil-design/tokens": "workspace:^"
+  },
+  "peerDependencies": {
+    "react": "^18.3 || ^19",
+    "react-dom": "^18.3 || ^19"
+  },
+  "devDependencies": {
+    "@fossil-design/stylelint-config": "workspace:*",
+    "@material-symbols/svg-400": "^0.47.6",
+    "@storybook/addon-a11y": "^10.6.1",
+    "@storybook/addon-docs": "^10.6.1",
+    "@storybook/addon-mcp": "^10.6.1",
+    "@storybook/addon-vitest": "^10.6.1",
+    "@storybook/react-vite": "^10.6.1",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitest/browser-playwright": "^5.0.3",
+    "playwright": "^1.63.0",
+    "react": "^19.3.0",
+    "react-docgen-typescript": "^2.4.0",
+    "react-dom": "^19.3.0",
+    "storybook": "^10.6.1",
+    "typescript": "catalog:",
+    "vite": "^8.3.2",
+    "vite-css-modules": "^1.16.0"
+  }
+}

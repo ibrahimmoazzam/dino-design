@@ -1,0 +1,94 @@
+# @fossil-design/react
+
+React components for [Fossil Design](https://github.com/ibrahimmoazzam/fossil-design), an open-source agentic design system. Their props take token keys and variant names, never raw values, so code written with them stays on-system.
+
+> **Early release.** Versions `0.x` may change component APIs between minor versions while the library is built out. The release notes list each change.
+
+## Install
+
+```sh
+npm install @fossil-design/react
+```
+
+React 18.3 or 19 is a peer dependency. Import the stylesheet once, at your app's root. It already holds the token values, so your app needs no CSS tooling of its own:
+
+```js
+import '@fossil-design/react/style.css';
+```
+
+No fonts are included. The text styles name Space Grotesk, Space Mono and Figtree, which are on Google Fonts; load them, or point the font tokens at your own faces ([`@fossil-design/tokens`](https://www.npmjs.com/package/@fossil-design/tokens)).
+
+## Use it
+
+```tsx
+import { Box, Stack, Text } from '@fossil-design/react';
+
+export function Note() {
+  return (
+    <Box
+      as="article"
+      surface="surface"
+      padding={{ default: 'm', tablet: 'l' }}
+      radius="surface"
+    >
+      <Stack gap="xs">
+        <Text as="h2" variant="heading-s">
+          Release notes
+        </Text>
+        <Text tone="muted">Spacing, colour and type all come from tokens.</Text>
+      </Stack>
+    </Box>
+  );
+}
+```
+
+| Component        | What it does                                                                                                                                                                                                                                                                                                                                                         |
+| ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `Box`            | The base layout element. `padding`, `paddingBlock`, `paddingInline` and `gap` take space tokens; `display`, `flexDirection`, `alignItems` and `justifyContent` take keywords. Each can change per breakpoint, mobile first: `{ default, tablet, compact, large, max }`. `surface` sets a fill and its contrast-checked text colour together. There is no margin prop |
+| `Stack`          | A `Box` in a row or a column, spaced by `gap`                                                                                                                                                                                                                                                                                                                        |
+| `Text`           | Text in one of the token text styles. A heading style needs `as`, so the outline is always chosen                                                                                                                                                                                                                                                                    |
+| `Button`         | A native button: `tone` primary or secondary, `size` s or m, text, an icon and text, or an icon alone with a `label`. Size m is at least a 44px target                                                                                                                                                                                                               |
+| `Link`           | A link with a dotted underline that fills in on hover and focus. A new tab gets an outward arrow and says so to screen readers. `asChild` styles a router's link, or a button for an action that reads like a link                                                                                                                                                   |
+| `Card`           | A bordered surface for one of a set of parallel pieces of content, with an optional title at a heading level you choose                                                                                                                                                                                                                                              |
+| `Figure`         | Frames your image or video, and ties an optional caption to it                                                                                                                                                                                                                                                                                                       |
+| `Icon`           | An icon, decorative unless it has a `label`. Takes one of Fossil's icons, such as `CloseIcon`, or any SVG component of your own                                                                                                                                                                                                                                      |
+| `SkipLink`       | Lets keyboard users jump past the navigation; hidden until focused                                                                                                                                                                                                                                                                                                   |
+| `VisuallyHidden` | Text for assistive technology only                                                                                                                                                                                                                                                                                                                                   |
+| `Modal`          | A modal dialog on native `<dialog>`: focus on the title, Escape and a click outside close it, and the page behind stays still. `renderPanel` lets an animation library run the panel                                                                                                                                                                                 |
+| `Tabs`           | Tabs as a segmented control under their panel, with arrow keys, Home and End                                                                                                                                                                                                                                                                                         |
+| `Carousel`       | A scrolling, snapping row of cards, with buttons or dots that appear only when the cards overflow                                                                                                                                                                                                                                                                    |
+| `Popover`        | A panel beside its trigger, for content that may be interactive; not modal                                                                                                                                                                                                                                                                                           |
+| `Tooltip`        | A short label shown on hover and focus, dismissed with Escape                                                                                                                                                                                                                                                                                                        |
+| `Clip`           | A silent, looping video with the play and pause toggle WCAG 2.2.2 asks for; paused for readers who prefer reduced motion                                                                                                                                                                                                                                             |
+
+Each component exports its variants as a constant, such as `textVariants`, for docs and tools to read.
+
+## Docs for agents
+
+The package carries its own docs, in `node_modules/@fossil-design/react/docs/`, so a coding agent reads the version you installed rather than its training data. `index.md` lists every component; `foundations.md` has the rules, the escape hatches and the token scales; each component's file says when to use it and when not to, its states, its accessibility, its props and examples. `components.json` and `tokens.json` hold the same as JSON.
+
+Point your agent at them with the package's bin, from your app's root:
+
+```sh
+npx fossil-agents-md
+```
+
+It writes Fossil's rules, the token scales, the components and the paths to their docs into your `AGENTS.md`, between `<!-- BEGIN:fossil-design-agent-rules -->` and `<!-- END:fossil-design-agent-rules -->`, and adds `@AGENTS.md` to your `CLAUDE.md` if you have one. Run it again after upgrading; it replaces only the block. `npx fossil-agents-md --check` changes nothing, and fails when the block is out of date, for CI.
+
+## Figma Make
+
+Install `@fossil-design/react` in the Make file. Before the first prompt, create `Guidelines.md` in the file's `guidelines/` folder, which a new Make file has empty, with this one line:
+
+```md
+Read node_modules/@fossil-design/react/guidelines/Guidelines.md before writing any code, and follow it.
+```
+
+The package's own guidelines set up the stylesheet and the fonts, tell Make to skip its scaffold's Tailwind classes, then route it through the docs. They match the version installed. In a Make kit, the kit's `Guidelines.md` is the same line.
+
+## Icons
+
+Fossil ships the [Material Symbols](https://fonts.google.com/icons) its components use, as React components: `ArrowOutwardIcon`, `ChevronLeftIcon`, `ChevronRightIcon`, `CloseIcon`, `PauseIcon` and `PlayArrowIcon`. They are © Google, under the Apache License 2.0, included as `dist/licenses/material-symbols.txt`. For any other icon, pass your own SVG component to `Icon`.
+
+## License
+
+MIT © 2026 Ibrahim Moazzam. See [LICENSE](./LICENSE).
