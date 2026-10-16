@@ -118,7 +118,7 @@ export function sync(
   return { ok, messages };
 }
 
-const USAGE = `Usage: fossil-agents-md [--check]
+const USAGE = `Usage: dino-agents-md [--check]
 
 Writes the design system's rules and the paths to its installed docs into AGENTS.md, in the
 current folder, between managed markers. Run it again after upgrading; it replaces only the

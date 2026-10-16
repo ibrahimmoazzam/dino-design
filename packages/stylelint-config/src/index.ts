@@ -1,6 +1,6 @@
 import { createRequire } from 'node:module';
 import { resolve } from 'node:path';
-import lintLists from '@fossil-design/tokens/lint.json' with { type: 'json' };
+import lintLists from '@dino-labs/tokens/lint.json' with { type: 'json' };
 import type { Config } from 'stylelint';
 
 const require = createRequire(import.meta.url);
@@ -118,7 +118,7 @@ export function brand({
         true,
         {
           importFrom: [
-            require.resolve('@fossil-design/tokens/tokens.css'),
+            require.resolve('@dino-labs/tokens/tokens.css'),
             ...siteTokenFiles,
           ],
         },

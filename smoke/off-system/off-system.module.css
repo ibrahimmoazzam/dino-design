@@ -4,7 +4,7 @@
   margin-block-end: 8px;
 
   /* A primitive token. */
-  background-color: var(--fossil-base-color-gray-100);
+  background-color: var(--dino-base-color-gray-100);
 
   /* A hex colour. */
   color: #1b4dff;

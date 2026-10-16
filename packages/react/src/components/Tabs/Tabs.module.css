@@ -2,7 +2,7 @@
 .tabs {
   display: flex;
   flex-direction: column;
-  gap: var(--fossil-space-m);
+  gap: var(--dino-space-m);
   min-inline-size: 0;
 }
 
@@ -11,9 +11,9 @@
 }
 
 .panelContent {
-  transition-duration: var(--fossil-motion-duration-default);
+  transition-duration: var(--dino-motion-duration-default);
   transition-property: opacity, translate;
-  transition-timing-function: var(--fossil-motion-easing-standard);
+  transition-timing-function: var(--dino-motion-easing-standard);
 }
 
 @starting-style {
@@ -49,9 +49,9 @@
   display: flex;
   overflow-x: auto;
   align-items: center;
-  padding: var(--fossil-space-2xs);
-  border-radius: var(--fossil-radius-pill);
-  background-color: var(--fossil-color-background-sunken);
+  padding: var(--dino-space-2xs);
+  border-radius: var(--dino-radius-pill);
+  background-color: var(--dino-color-background-sunken);
   overscroll-behavior-x: contain;
   scrollbar-width: none;
 }
@@ -59,29 +59,29 @@
 .tab {
   position: relative;
   flex: none;
-  padding-block: var(--fossil-space-s);
-  padding-inline: var(--fossil-space-l);
+  padding-block: var(--dino-space-s);
+  padding-inline: var(--dino-space-l);
   border-width: 0;
-  border-radius: var(--fossil-radius-pill);
+  border-radius: var(--dino-radius-pill);
   background-color: transparent;
-  color: var(--fossil-color-text-muted);
-  font-family: var(--fossil-text-control-font-family);
-  font-size: var(--fossil-text-control-font-size);
-  font-weight: var(--fossil-text-control-font-weight);
-  letter-spacing: var(--fossil-text-control-letter-spacing);
-  line-height: var(--fossil-text-control-line-height);
+  color: var(--dino-color-text-muted);
+  font-family: var(--dino-text-control-font-family);
+  font-size: var(--dino-text-control-font-size);
+  font-weight: var(--dino-text-control-font-weight);
+  letter-spacing: var(--dino-text-control-letter-spacing);
+  line-height: var(--dino-text-control-line-height);
   cursor: pointer;
-  transition: color var(--fossil-motion-duration-fast)
-    var(--fossil-motion-easing-standard);
+  transition: color var(--dino-motion-duration-fast)
+    var(--dino-motion-easing-standard);
 }
 
 .tab:hover {
-  color: var(--fossil-color-text-default);
+  color: var(--dino-color-text-default);
 }
 
 .tab:focus-visible {
-  outline: var(--fossil-border-focus);
-  outline-offset: var(--fossil-focus-ring-offset);
+  outline: var(--dino-border-focus);
+  outline-offset: var(--dino-focus-ring-offset);
 }
 
 /*
@@ -89,16 +89,16 @@
  * against the track, the highlight colour and the weight.
  */
 .tab[aria-selected='true'] {
-  color: var(--fossil-color-highlight-default);
-  font-weight: var(--fossil-font-weight-strong);
+  color: var(--dino-color-highlight-default);
+  font-weight: var(--dino-font-weight-strong);
 }
 
 .chip {
   position: absolute;
   inset: 0;
   z-index: 0;
-  border-radius: var(--fossil-radius-pill);
-  background-color: var(--fossil-color-background-raised);
+  border-radius: var(--dino-radius-pill);
+  background-color: var(--dino-color-background-raised);
 }
 
 .label {
@@ -115,7 +115,7 @@
   display: block;
   overflow: hidden;
   block-size: 0;
-  font-weight: var(--fossil-font-weight-strong);
+  font-weight: var(--dino-font-weight-strong);
   visibility: hidden;
 }
 

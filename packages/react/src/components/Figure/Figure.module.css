@@ -1,8 +1,8 @@
 .frame {
   position: relative;
   overflow: hidden;
-  border: var(--fossil-border-hairline);
-  border-radius: var(--fossil-radius-compact);
+  border: var(--dino-border-hairline);
+  border-radius: var(--dino-radius-compact);
 }
 
 /* The app's image or video fills the frame and keeps its ratio. */

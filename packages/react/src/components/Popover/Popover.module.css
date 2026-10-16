@@ -3,14 +3,14 @@
   composes: surface from '../Floating/floating.module.css';
   display: flex;
   flex-direction: column;
-  gap: var(--fossil-space-xs);
-  padding: var(--fossil-space-m);
-  border-radius: var(--fossil-radius-surface);
-  font-family: var(--fossil-font-family-mono);
-  font-size: var(--fossil-text-caption-font-size);
-  font-weight: var(--fossil-text-caption-font-weight);
-  letter-spacing: var(--fossil-text-caption-letter-spacing);
-  line-height: var(--fossil-text-caption-line-height);
+  gap: var(--dino-space-xs);
+  padding: var(--dino-space-m);
+  border-radius: var(--dino-radius-surface);
+  font-family: var(--dino-font-family-mono);
+  font-size: var(--dino-text-caption-font-size);
+  font-weight: var(--dino-text-caption-font-weight);
+  letter-spacing: var(--dino-text-caption-letter-spacing);
+  line-height: var(--dino-text-caption-line-height);
 }
 
 .arrow {

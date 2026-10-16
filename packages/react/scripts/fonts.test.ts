@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import tokens from '@fossil-design/tokens/tokens.json';
+import tokens from '@dino-labs/tokens/tokens.json';
 import { loadedFonts, missingFonts, requiredFonts } from './fonts.ts';
 
 const style = (fontFamily: string, fontWeight: number) => ({

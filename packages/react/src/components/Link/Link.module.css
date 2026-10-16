@@ -21,13 +21,13 @@
 }
 
 .tone-accent {
-  color: var(--fossil-color-accent-default);
+  color: var(--dino-color-accent-default);
 }
 
 .link:focus-visible {
-  border-radius: var(--fossil-radius-compact);
-  outline: var(--fossil-border-focus);
-  outline-offset: var(--fossil-focus-ring-offset);
+  border-radius: var(--dino-radius-compact);
+  outline: var(--dino-border-focus);
+  outline-offset: var(--dino-focus-ring-offset);
 }
 
 /* Inline, not inline-block, so a long link still wraps across lines. */
@@ -59,8 +59,8 @@
 
 .text::before {
   inline-size: 0%;
-  transition: inline-size var(--fossil-motion-duration-slow)
-    var(--fossil-motion-easing-standard);
+  transition: inline-size var(--dino-motion-duration-slow)
+    var(--dino-motion-easing-standard);
 }
 
 .link:hover .text::before,
@@ -75,8 +75,8 @@
   /* stylelint-disable-next-line scale-unlimited/declaration-strict-value -- em, so the gap scales with the link's text; a space token would not */
   padding-inline-start: 0.1em;
   opacity: 0.35;
-  transition: opacity var(--fossil-motion-duration-slow)
-    var(--fossil-motion-easing-standard);
+  transition: opacity var(--dino-motion-duration-slow)
+    var(--dino-motion-easing-standard);
 }
 
 .link:hover .icon,

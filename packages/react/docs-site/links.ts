@@ -1,6 +1,6 @@
 /// <reference types="vite/client" />
 import brand from '../../../brand.config.json' with { type: 'json' };
-import tokensFile from '@fossil-design/tokens/tokens.json';
+import tokensFile from '@dino-labs/tokens/tokens.json';
 import { onGitHub, sitePage } from './repo.ts';
 
 /** Where a mention links: a URL, and the site page it opens, if it's on this site. */

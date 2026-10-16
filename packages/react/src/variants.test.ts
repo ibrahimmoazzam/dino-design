@@ -1,4 +1,4 @@
-import { tokenKeys } from '@fossil-design/tokens';
+import { tokenKeys } from '@dino-labs/tokens';
 import { describe, expect, it } from 'vitest';
 import { boxVariants, surfaceTokens } from './components/Box/variants.ts';
 import { textVariants } from './components/Text/Text.tsx';

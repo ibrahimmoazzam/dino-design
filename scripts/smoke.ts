@@ -57,7 +57,7 @@ async function check(app: string, dir: string) {
     expectIncludes(
       "The page's CSS",
       css,
-      '--fossil-color-background-page',
+      '--dino-color-background-page',
       buttonClass,
     );
   } else {
@@ -90,7 +90,7 @@ async function check(app: string, dir: string) {
     expectIncludes(
       "The app's CSS",
       css,
-      '--fossil-color-background-page',
+      '--dino-color-background-page',
       buttonClass,
     );
   }
@@ -103,16 +103,16 @@ async function check(app: string, dir: string) {
  */
 function checkAgentsMd(dir: string) {
   writeFileSync(join(dir, 'CLAUDE.md'), '# Smoke app\n');
-  const bin = ['--loglevel=error', '--no-install', 'fossil-agents-md'];
+  const bin = ['--loglevel=error', '--no-install', 'dino-agents-md'];
   run('npx', bin, dir, env);
   run('npx', [...bin, '--check'], dir, env);
   const agents = readFileSync(join(dir, 'AGENTS.md'), 'utf8');
   expectIncludes(
     'AGENTS.md',
     agents,
-    '<!-- BEGIN:fossil-design-agent-rules -->',
+    '<!-- BEGIN:dino-labs-agent-rules -->',
     '### Components',
-    '<!-- END:fossil-design-agent-rules -->',
+    '<!-- END:dino-labs-agent-rules -->',
   );
   expectIncludes(
     'CLAUDE.md',
@@ -120,13 +120,13 @@ function checkAgentsMd(dir: string) {
     '@AGENTS.md',
   );
 
-  const installed = join(dir, 'node_modules/@fossil-design/react');
+  const installed = join(dir, 'node_modules/@dino-labs/react');
   const guidelines = readFileSync(
     join(installed, 'guidelines/Guidelines.md'),
     'utf8',
   );
   const paths = [agents, guidelines].flatMap((text) => [
-    ...[...text.matchAll(/node_modules\/@fossil-design\/react\/[\w./-]*/g)].map(
+    ...[...text.matchAll(/node_modules\/@dino-labs\/react\/[\w./-]*/g)].map(
       ([path]) => join(dir, path),
     ),
     ...[...text.matchAll(/`(\w+\.md)`/g)]

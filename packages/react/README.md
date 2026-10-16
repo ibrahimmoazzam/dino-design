@@ -1,27 +1,27 @@
-# @fossil-design/react
+# @dino-labs/react
 
-React components for [Fossil Design](https://github.com/ibrahimmoazzam/fossil-design), an open-source agentic design system. Their props take token keys and variant names, never raw values, so code written with them stays on-system.
+React components for [Fossil Design](https://github.com/ibrahimmoazzam/dino-design), an open-source agentic design system. Their props take token keys and variant names, never raw values, so code written with them stays on-system.
 
 > **Early release.** Versions `0.x` may change component APIs between minor versions while the library is built out. The release notes list each change.
 
 ## Install
 
 ```sh
-npm install @fossil-design/react
+npm install @dino-labs/react
 ```
 
 React 18.3 or 19 is a peer dependency. Import the stylesheet once, at your app's root. It already holds the token values, so your app needs no CSS tooling of its own:
 
 ```js
-import '@fossil-design/react/style.css';
+import '@dino-labs/react/style.css';
 ```
 
-No fonts are included. The text styles name Space Grotesk, Space Mono and Figtree, which are on Google Fonts; load them, or point the font tokens at your own faces ([`@fossil-design/tokens`](https://www.npmjs.com/package/@fossil-design/tokens)).
+No fonts are included. The text styles name Space Grotesk, Space Mono and Figtree, which are on Google Fonts; load them, or point the font tokens at your own faces ([`@dino-labs/tokens`](https://www.npmjs.com/package/@dino-labs/tokens)).
 
 ## Use it
 
 ```tsx
-import { Box, Stack, Text } from '@fossil-design/react';
+import { Box, Stack, Text } from '@dino-labs/react';
 
 export function Note() {
   return (
@@ -65,22 +65,22 @@ Each component exports its variants as a constant, such as `textVariants`, for d
 
 ## Docs for agents
 
-The package carries its own docs, in `node_modules/@fossil-design/react/docs/`, so a coding agent reads the version you installed rather than its training data. `index.md` lists every component; `foundations.md` has the rules, the escape hatches and the token scales; each component's file says when to use it and when not to, its states, its accessibility, its props and examples. `components.json` and `tokens.json` hold the same as JSON.
+The package carries its own docs, in `node_modules/@dino-labs/react/docs/`, so a coding agent reads the version you installed rather than its training data. `index.md` lists every component; `foundations.md` has the rules, the escape hatches and the token scales; each component's file says when to use it and when not to, its states, its accessibility, its props and examples. `components.json` and `tokens.json` hold the same as JSON.
 
 Point your agent at them with the package's bin, from your app's root:
 
 ```sh
-npx fossil-agents-md
+npx dino-agents-md
 ```
 
-It writes Fossil's rules, the token scales, the components and the paths to their docs into your `AGENTS.md`, between `<!-- BEGIN:fossil-design-agent-rules -->` and `<!-- END:fossil-design-agent-rules -->`, and adds `@AGENTS.md` to your `CLAUDE.md` if you have one. Run it again after upgrading; it replaces only the block. `npx fossil-agents-md --check` changes nothing, and fails when the block is out of date, for CI.
+It writes Fossil's rules, the token scales, the components and the paths to their docs into your `AGENTS.md`, between `<!-- BEGIN:dino-labs-agent-rules -->` and `<!-- END:dino-labs-agent-rules -->`, and adds `@AGENTS.md` to your `CLAUDE.md` if you have one. Run it again after upgrading; it replaces only the block. `npx dino-agents-md --check` changes nothing, and fails when the block is out of date, for CI.
 
 ## Figma Make
 
-Install `@fossil-design/react` in the Make file. Before the first prompt, create `Guidelines.md` in the file's `guidelines/` folder, which a new Make file has empty, with this one line:
+Install `@dino-labs/react` in the Make file. Before the first prompt, create `Guidelines.md` in the file's `guidelines/` folder, which a new Make file has empty, with this one line:
 
 ```md
-Read node_modules/@fossil-design/react/guidelines/Guidelines.md before writing any code, and follow it.
+Read node_modules/@dino-labs/react/guidelines/Guidelines.md before writing any code, and follow it.
 ```
 
 The package's own guidelines set up the stylesheet and the fonts, tell Make to skip its scaffold's Tailwind classes, then route it through the docs. They match the version installed. In a Make kit, the kit's `Guidelines.md` is the same line.

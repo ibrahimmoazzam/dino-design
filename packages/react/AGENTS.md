@@ -1,4 +1,4 @@
-# @fossil-design/react
+# @dino-labs/react
 
 Fossil's React components. This file covers working on them; the root `AGENTS.md` holds the repo rules and the token foundations. ADR 0009 explains the package's design, and ADR 0008 the Stylelint config its stylesheets pass.
 
@@ -13,7 +13,7 @@ pnpm --filter react storybook     # Storybook at localhost:6006
 pnpm test --project 'react*'      # unit tests, real-input tests, then every story in Chromium with axe
 ```
 
-Build `@fossil-design/tokens` first; `pnpm build` from the root does it in order. With Storybook running, its MCP server is at `localhost:6006/mcp`, and the root `.mcp.json` registers it for Claude Code: use its docs tools to look up a component, and `test-run` to run a story's tests. The browser tests need Chromium once per machine: `pnpm --filter react exec playwright install chromium`.
+Build `@dino-labs/tokens` first; `pnpm build` from the root does it in order. With Storybook running, its MCP server is at `localhost:6006/mcp`, and the root `.mcp.json` registers it for Claude Code: use its docs tools to look up a component, and `test-run` to run a story's tests. The browser tests need Chromium once per machine: `pnpm --filter react exec playwright install chromium`.
 
 ## Layout
 
@@ -26,13 +26,13 @@ Build `@fossil-design/tokens` first; `pnpm build` from the root does it in order
 - `src/components/Floating/` is shared by `Popover` and `Tooltip`: the surface's look, the portal into a `<dialog>`, and reading a trigger's ref on React 18 and 19. It isn't a component.
 - `scripts/docs.ts` writes `docs/`, the docs bundled in the package (ADR 0016): an index, the foundations, the token reference, one Markdown file per component and `components.json`. It also writes `docs/agents-block.md`, the block for an app's `AGENTS.md`, and `guidelines/`, the Figma Make guidelines (ADR 0017). Neither folder is committed. `scripts/docgen.ts` holds the react-docgen-typescript options it shares with Storybook.
 - `docs-src/` holds the hand-written parts, as templates. `rules.md` is the rules for apps, escape hatches and gap logging, which reach `foundations.md`, the block and Make alike; `figma.md` is implementing a Figma design, in `foundations.md` only; `agents.md` frames the block; `guidelines/` holds Make's `Guidelines.md` and `setup.md`. Placeholders such as `{{name}}`, `{{prefix}}`, `{{package}}`, `{{docs}}` and `{{tablet}}` are filled from `brand.config.json`, `package.json` and the tokens; `scripts/docs.ts` lists them all, and fails on one it doesn't know.
-- `scripts/agents-md.ts` is the `fossil-agents-md` bin. `tsconfig.bin.json` compiles it into `dist/bin/`, because Node won't strip types from a file under `node_modules`. It copies `docs/agents-block.md` into an app's `AGENTS.md` between markers, adds `@AGENTS.md` to `CLAUDE.md`, and with `--check` only reports.
+- `scripts/agents-md.ts` is the `dino-agents-md` bin. `tsconfig.bin.json` compiles it into `dist/bin/`, because Node won't strip types from a file under `node_modules`. It copies `docs/agents-block.md` into an app's `AGENTS.md` between markers, adds `@AGENTS.md` to `CLAUDE.md`, and with `--check` only reports.
 - `.storybook/` holds the Storybook config. `token-px.ts` converts a token to the pixels a play function compares against, and `focus-start.ts` puts focus at the start of the page before a real Tab.
 - `*.browser.test.tsx` files hold the real-input tests. They render a story with `composeStories(stories).Story.run()`, then drive it with `userEvent` and `page` from `vitest/browser`.
 
 ## Rules
 
-- **Tokens only.** Stylesheets use semantic tokens through `var(--fossil-…)`. A text style sets all five of its parts, never the `font` shorthand. No margins except `0`; space with padding and `gap`. `pnpm lint` enforces all of this.
+- **Tokens only.** Stylesheets use semantic tokens through `var(--dino-…)`. A text style sets all five of its parts, never the `font` shorthand. No margins except `0`; space with padding and `gap`. `pnpm lint` enforces all of this.
 - **Variant maps.** Each component exports its variants as a constant, `buttonVariants = { tone: ['primary', 'secondary'] } as const`, and derives its prop types from it. Every value needs a class in the CSS Module; the generated types make a missing one a type error.
 - **Native elements first,** ARIA only for real gaps. Everything interactive is keyboard-operable, has a visible focus indicator and an accessible name, and respects `prefers-reduced-motion`.
 - **Props describe behaviour, not the element underneath.** Take `open`, `onOpenChange` and `title`, never an `HTMLDialogElement` ref or a native-only prop, so a fork can swap a headless library into one component without changing its API.
@@ -44,7 +44,7 @@ Build `@fossil-design/tokens` first; `pnpm build` from the root does it in order
 - **Icons as components.** Take an `IconComponent`, not a name, so an app's own SVGs work beside Fossil's.
 - **Tests.** Every component has stories whose play functions exercise its states. axe runs on every story and must pass in light and dark; add a story with `globals: { theme: 'dark' }` where colour matters. Anything that relies on native handling, such as Escape on a `<dialog>`, light dismiss or `:focus-visible`, needs a real-input browser test.
 - **Document every component in its JSDoc.** A summary, then `## When to use`, `## When not to use`, `## States` and `## Accessibility`, which splits into `### Built in` and `### Up to you`. Every prop has a description. Name the better component in "When not to use".
-- **Tag examples.** Tag one or more stories `example`, each with a JSDoc comment saying why an app would do this. Write them as an app would: a `render` that takes no args, or args alone. They may use only `@fossil-design/react`'s and React's exports, or a module-level constant with a JSDoc comment saying what the app puts there, such as an image URL. `pnpm --filter react run docs` fails on anything missing, and so does the build.
+- **Tag examples.** Tag one or more stories `example`, each with a JSDoc comment saying why an app would do this. Write them as an app would: a `render` that takes no args, or args alone. They may use only `@dino-labs/react`'s and React's exports, or a module-level constant with a JSDoc comment saying what the app puts there, such as an image URL. `pnpm --filter react run docs` fails on anything missing, and so does the build.
 - **Keep the AGENTS.md block under 8 KB.** It's always in an app agent's context, so the build fails over budget. Put detail in `foundations.md` or a component's doc, which the block points to.
 - **Write `docs-src/rules.md` for every reader:** it reaches `foundations.md`, every app's `AGENTS.md` and Figma Make.
 - **A changeset** with any change to the public surface.

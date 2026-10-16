@@ -10,12 +10,12 @@
 .carousel {
   display: flex;
   flex-direction: column;
-  gap: var(--fossil-space-m);
+  gap: var(--dino-space-m);
   min-inline-size: 0;
 }
 
 .carousel:has(> .dots) {
-  gap: var(--fossil-space-2xs);
+  gap: var(--dino-space-2xs);
 }
 
 /* The track is the offsetParent, so a card's offsetLeft shares scrollLeft's origin. */
@@ -25,7 +25,7 @@
   overflow-x: auto;
   flex-direction: row;
   margin: 0;
-  padding-block: var(--carousel-bleed, var(--fossil-space-2xs));
+  padding-block: var(--carousel-bleed, var(--dino-space-2xs));
   padding-inline: var(--carousel-inset);
   list-style: none;
   overscroll-behavior-inline: contain;
@@ -34,13 +34,13 @@
   scrollbar-width: none;
   /* The gutter places the cards and the bleed is the margin around them; both step and snap read it. */
   --carousel-inset: calc(
-    var(--carousel-gutter, 0px) + var(--carousel-bleed, var(--fossil-space-2xs))
+    var(--carousel-gutter, 0px) + var(--carousel-bleed, var(--dino-space-2xs))
   );
 }
 
 .track:focus-visible {
-  outline: var(--fossil-border-focus);
-  outline-offset: calc(-1 * var(--fossil-focus-ring-width));
+  outline: var(--dino-border-focus);
+  outline-offset: calc(-1 * var(--dino-focus-ring-width));
 }
 
 .item {
@@ -57,15 +57,15 @@
 .controls {
   display: flex;
   justify-content: flex-end;
-  gap: var(--fossil-space-xs);
+  gap: var(--dino-space-xs);
   padding-inline: var(--carousel-gutter, 0);
 }
 
 .controls,
 .dots {
-  transition-duration: var(--fossil-motion-duration-default);
+  transition-duration: var(--dino-motion-duration-default);
   transition-property: opacity, translate;
-  transition-timing-function: var(--fossil-motion-easing-standard);
+  transition-timing-function: var(--dino-motion-easing-standard);
 }
 
 .controls[data-state='closed'],
@@ -117,8 +117,8 @@
   inline-size: calc(
     (var(--count) - 1) * var(--dot-spacing) + var(--dot-target)
   );
-  border-radius: var(--fossil-radius-pill);
-  background-color: var(--fossil-color-background-page);
+  border-radius: var(--dino-radius-pill);
+  background-color: var(--dino-color-background-page);
   content: '';
   translate: -50% 0;
 }
@@ -141,11 +141,11 @@
 .dot::before {
   inline-size: var(--dot-size);
   block-size: var(--dot-size);
-  border-radius: var(--fossil-radius-pill);
-  background-color: var(--fossil-color-border-strong);
+  border-radius: var(--dino-radius-pill);
+  background-color: var(--dino-color-border-strong);
   content: '';
-  transition: background-color var(--fossil-motion-duration-default)
-    var(--fossil-motion-easing-standard);
+  transition: background-color var(--dino-motion-duration-default)
+    var(--dino-motion-easing-standard);
   translate: calc(
       (var(--i) - (var(--count) - 1) / 2) *
         (var(--dot-spacing) - var(--dot-target))
@@ -154,11 +154,11 @@
 }
 
 .dot:hover::before {
-  background-color: var(--fossil-color-border-hover);
+  background-color: var(--dino-color-border-hover);
 }
 
 .dot[aria-current='true']::before {
-  background-color: var(--fossil-color-text-default);
+  background-color: var(--dino-color-text-default);
 }
 
 /* The ring goes on the mark, since the button no longer centres on it. */
@@ -167,8 +167,8 @@
 }
 
 .dot:focus-visible::before {
-  outline: var(--fossil-border-focus);
-  outline-offset: var(--fossil-focus-ring-offset);
+  outline: var(--dino-border-focus);
+  outline-offset: var(--dino-focus-ring-offset);
 }
 
 @media (prefers-reduced-motion: reduce) {

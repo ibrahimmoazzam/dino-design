@@ -1,5 +1,5 @@
 {
-  "name": "@fossil-design/tokens",
+  "name": "@dino-labs/tokens",
   "version": "0.6.2",
   "description": "Design tokens for Fossil Design: DTCG source files and the Style Dictionary build that turns them into CSS, JSON and TypeScript.",
   "keywords": [
@@ -9,13 +9,13 @@
     "style-dictionary",
     "css-custom-properties"
   ],
-  "homepage": "https://github.com/ibrahimmoazzam/fossil-design/tree/main/packages/tokens#readme",
-  "bugs": "https://github.com/ibrahimmoazzam/fossil-design/issues",
+  "homepage": "https://github.com/ibrahimmoazzam/dino-design/tree/main/packages/tokens#readme",
+  "bugs": "https://github.com/ibrahimmoazzam/dino-design/issues",
   "license": "MIT",
   "author": "Ibrahim Moazzam (https://github.com/ibrahimmoazzam)",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ibrahimmoazzam/fossil-design.git",
+    "url": "git+https://github.com/ibrahimmoazzam/dino-design.git",
     "directory": "packages/tokens"
   },
   "type": "module",

@@ -11,7 +11,7 @@ import {
   Tabs,
   Text,
   Tooltip,
-} from '@fossil-design/react';
+} from '@dino-labs/react';
 import { useState } from 'react';
 import styles from './app.module.css';
 
