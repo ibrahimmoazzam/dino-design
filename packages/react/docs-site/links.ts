@@ -55,8 +55,8 @@ const code: Record<string, Target> = {
   'Learnings.md': site('research-learnings'),
   'docs/Learnings.md': site('research-learnings'),
   'docs/drift-eval.md': site('research-drift-eval'),
-  'adopting.md': site('adopt-fossil-for-your-brand'),
-  'docs/adopting.md': site('adopt-fossil-for-your-brand'),
+  'adopting.md': site('adopt-dino-design-for-your-brand'),
+  'docs/adopting.md': site('adopt-dino-design-for-your-brand'),
   'key-decisions.md': site('architecture-key-decisions'),
   'docs/key-decisions.md': site('architecture-key-decisions'),
   'docs/decisions/': site('architecture-decision-records'),
@@ -141,7 +141,7 @@ const code: Record<string, Target> = {
   'atlassian.design/llms.txt': web('https://atlassian.design/llms.txt'),
   'llms.txt': web('https://llmstxt.org/'),
 
-  // Fossil's packages.
+  // Dino Design's packages.
   [`${brand.npmScope}/react`]: npm(`${brand.npmScope}/react`),
   [`${brand.npmScope}/tokens`]: npm(`${brand.npmScope}/tokens`),
   [`${brand.npmScope}/eslint-config`]: npm(`${brand.npmScope}/eslint-config`),

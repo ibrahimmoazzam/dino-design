@@ -29,7 +29,7 @@ function styleDeclaration(): Plugin {
   };
 }
 
-/** Apache-2.0 asks for its license to travel with the icons Fossil generates from Material Symbols. */
+/** Apache-2.0 asks for its license to travel with the icons Dino Design generates from Material Symbols. */
 function iconLicense(): Plugin {
   const require = createRequire(import.meta.url);
   return {

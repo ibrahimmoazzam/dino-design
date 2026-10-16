@@ -1,6 +1,6 @@
 # @dino-labs/react
 
-Fossil's React components. This file covers working on them; the root `AGENTS.md` holds the repo rules and the token foundations. ADR 0009 explains the package's design, and ADR 0008 the Stylelint config its stylesheets pass.
+Dino Design's React components. This file covers working on them; the root `AGENTS.md` holds the repo rules and the token foundations. ADR 0009 explains the package's design, and ADR 0008 the Stylelint config its stylesheets pass.
 
 ## Commands
 
@@ -20,7 +20,7 @@ Build `@dino-labs/tokens` first; `pnpm build` from the root does it in order. Wi
 - `src/components/<Name>/`: `<Name>.tsx`, `<Name>.module.css` and `<Name>.stories.tsx`. Export the component, its variant map and its public types from `src/index.ts`.
 - `src/components/Box/variants.ts` holds `Box`'s elements, keywords and surfaces. It imports nothing, because `scripts/generate.ts` reads it directly.
 - `scripts/generate.ts` writes `src/generated/box.module.css`, one class per prop, value and breakpoint, and `src/generated/icons.ts`, one component per name in `icons.json`.
-- `icons.json` lists the Material Symbols (rounded, weight 400) that Fossil's components use. Add a name there to ship another icon; the build copies their Apache-2.0 license into `dist/licenses/`.
+- `icons.json` lists the Material Symbols (rounded, weight 400) that Dino Design's components use. Add a name there to ship another icon; the build copies their Apache-2.0 license into `dist/licenses/`.
 - `src/responsive.ts` holds `Responsive<T>` and the helpers that turn responsive props into classes.
 - `src/hooks/` holds `usePresence`, which keeps an element mounted until its CSS transitions finish, and `usePrefersReducedMotion`.
 - `src/components/Floating/` is shared by `Popover` and `Tooltip`: the surface's look, the portal into a `<dialog>`, and reading a trigger's ref on React 18 and 19. It isn't a component.
@@ -41,7 +41,7 @@ Build `@dino-labs/tokens` first; `pnpm build` from the root does it in order. Wi
 - **Behaviour props use headless-library names:** `open` and `onOpenChange`, `value`, `defaultValue` and `onValueChange`.
 - **Layout through `Box` and `Stack`,** in stories as in components.
 - **Element substitution through `asChild`.** A component that styles an element an app may need to swap, such as `Link` for a router's link, takes `asChild` and clones its single child, merging `className`. Use React's `cloneElement`, not a library.
-- **Icons as components.** Take an `IconComponent`, not a name, so an app's own SVGs work beside Fossil's.
+- **Icons as components.** Take an `IconComponent`, not a name, so an app's own SVGs work beside Dino Design's.
 - **Tests.** Every component has stories whose play functions exercise its states. axe runs on every story and must pass in light and dark; add a story with `globals: { theme: 'dark' }` where colour matters. Anything that relies on native handling, such as Escape on a `<dialog>`, light dismiss or `:focus-visible`, needs a real-input browser test.
 - **Document every component in its JSDoc.** A summary, then `## When to use`, `## When not to use`, `## States` and `## Accessibility`, which splits into `### Built in` and `### Up to you`. Every prop has a description. Name the better component in "When not to use".
 - **Tag examples.** Tag one or more stories `example`, each with a JSDoc comment saying why an app would do this. Write them as an app would: a `render` that takes no args, or args alone. They may use only `@dino-labs/react`'s and React's exports, or a module-level constant with a JSDoc comment saying what the app puts there, such as an image URL. `pnpm --filter react run docs` fails on anything missing, and so does the build.

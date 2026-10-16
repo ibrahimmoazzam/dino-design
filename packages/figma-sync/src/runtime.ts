@@ -291,7 +291,7 @@ export function fromFigma(
   };
 }
 
-/** Creates Fossil's collections and modes where they're missing, and returns each mode's id. */
+/** Creates Dino Design's collections and modes where they're missing, and returns each mode's id. */
 export function ensureCollections(
   figma: Figma,
   ns: string,
@@ -325,7 +325,7 @@ export function ensureCollections(
   return { owned, modeIds };
 }
 
-/** Returns one page of the variables in Fossil's collections, with a hash of the page and of the whole read. */
+/** Returns one page of the variables in Dino Design's collections, with a hash of the page and of the whole read. */
 export async function read(spec: ReadSpec, figma: Figma): Promise<ReadPage> {
   const collections = await figma.variables.getLocalVariableCollectionsAsync();
   const variables = await figma.variables.getLocalVariablesAsync();
@@ -383,7 +383,7 @@ export async function read(spec: ReadSpec, figma: Figma): Promise<ReadPage> {
   });
 }
 
-/** Checks that every variable is in Figma, reports any Fossil doesn't know, and only then stamps the commit. */
+/** Checks that every variable is in Figma, reports any Dino Design doesn't know, and only then stamps the commit. */
 export async function finish(spec: FinishSpec, figma: Figma): Promise<unknown> {
   const collections = await figma.variables.getLocalVariableCollectionsAsync();
   const variables = await figma.variables.getLocalVariablesAsync();
@@ -419,7 +419,7 @@ export async function finish(spec: FinishSpec, figma: Figma): Promise<unknown> {
   });
 }
 
-/** Creates or updates one part of Fossil's variables. Running it again changes nothing. */
+/** Creates or updates one part of Dino Design's variables. Running it again changes nothing. */
 export async function apply(spec: ApplySpec, figma: Figma): Promise<unknown> {
   const collections = await figma.variables.getLocalVariableCollectionsAsync();
   const variables = await figma.variables.getLocalVariablesAsync();

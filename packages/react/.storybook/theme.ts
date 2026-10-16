@@ -131,7 +131,7 @@ export function frameProperties(mode: Mode): Record<string, string> {
 
 const themes = new Map<Mode, ThemeVars>();
 
-/** Storybook's own frame and docs pages, in Fossil's semantic tokens for one colour scheme. */
+/** Storybook's own frame and docs pages, in Dino Design's semantic tokens for one colour scheme. */
 export function siteTheme(mode: Mode): ThemeVars {
   const cached = themes.get(mode);
   if (cached) return cached;

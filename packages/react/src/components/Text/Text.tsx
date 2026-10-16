@@ -58,7 +58,7 @@ export type TextTone = (typeof textVariants.tone)[number];
 interface TextOwnProps {
   /** The text colour. Omit it to inherit, which keeps a surface's paired text colour. */
   tone?: TextTone;
-  /** Classes from the app's own stylesheet, added to Fossil's. */
+  /** Classes from the app's own stylesheet, added to Dino Design's. */
   className?: string;
 }
 

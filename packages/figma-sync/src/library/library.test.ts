@@ -739,7 +739,7 @@ describe('the styles script', () => {
     fonts = [{ family: 'Figtree', style: 'Regular' }],
   ) => {
     const canvas = new FakeCanvas();
-    const collection = canvas.variables.createVariableCollection('Fossil');
+    const collection = canvas.variables.createVariableCollection('Dino Design');
     for (const path of paths) {
       const type = path.startsWith('color')
         ? 'COLOR'
@@ -877,7 +877,7 @@ describe('the library check', () => {
   /** A library built exactly as the spec says, as the agent should build it. */
   const built = () => {
     const canvas = new FakeCanvas();
-    const collection = canvas.variables.createVariableCollection('Fossil');
+    const collection = canvas.variables.createVariableCollection('Dino Design');
     const variables = new Map<
       string,
       ReturnType<FakeCanvas['variables']['createVariable']>

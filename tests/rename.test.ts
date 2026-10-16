@@ -8,9 +8,9 @@ import {
   type Identity,
 } from '../scripts/rename.ts';
 
-const fossil: Identity = {
-  name: 'Fossil Design',
-  cssPrefix: 'fossil',
+const dino: Identity = {
+  name: 'Dino Design',
+  cssPrefix: 'dino',
   npmScope: '@dino-labs',
   repo: 'ibrahimmoazzam/dino-design',
 };
@@ -20,44 +20,44 @@ const acme: Identity = {
   npmScope: '@acme-design',
   repo: 'acme/acme-design',
 };
-const toAcme = (text: string) => rename(text, rewrites(fossil, acme));
+const toAcme = (text: string) => rename(text, rewrites(dino, acme));
 
 /**
  * Every fixture is written from the two identities rather than spelled out, because `pnpm rename`
  * rewrites this file along with the rest of a fork: a literal `--dino-space-m` becomes the
- * fork's prefix while the expectation beside it keeps Fossil's, and the case fails for the one
+ * fork's prefix while the expectation beside it keeps Dino Design's, and the case fails for the one
  * reason that proves the rename worked.
  */
 describe('rename', () => {
   it('renames package names, imports and dependencies', () => {
-    expect(toAcme(`import { Box } from '${fossil.npmScope}/react';`)).toBe(
+    expect(toAcme(`import { Box } from '${dino.npmScope}/react';`)).toBe(
       `import { Box } from '${acme.npmScope}/react';`,
     );
-    expect(toAcme(`"${fossil.npmScope}/tokens": "workspace:*"`)).toBe(
+    expect(toAcme(`"${dino.npmScope}/tokens": "workspace:*"`)).toBe(
       `"${acme.npmScope}/tokens": "workspace:*"`,
     );
-    expect(toAcme(`'${fossil.npmScope}/tokens': patch`)).toBe(
+    expect(toAcme(`'${dino.npmScope}/tokens': patch`)).toBe(
       `'${acme.npmScope}/tokens': patch`,
     );
   });
 
   it('renames custom properties, the bin and the AGENTS.md markers', () => {
-    expect(toAcme(`padding: var(--${fossil.cssPrefix}-space-m);`)).toBe(
+    expect(toAcme(`padding: var(--${dino.cssPrefix}-space-m);`)).toBe(
       `padding: var(--${acme.cssPrefix}-space-m);`,
     );
-    expect(toAcme(`npx ${fossil.cssPrefix}-agents-md --check`)).toBe(
+    expect(toAcme(`npx ${dino.cssPrefix}-agents-md --check`)).toBe(
       `npx ${acme.cssPrefix}-agents-md --check`,
     );
-    expect(
-      toAcme(`<!-- BEGIN:${fossil.npmScope.slice(1)}-agent-rules -->`),
-    ).toBe(`<!-- BEGIN:${acme.npmScope.slice(1)}-agent-rules -->`);
+    expect(toAcme(`<!-- BEGIN:${dino.npmScope.slice(1)}-agent-rules -->`)).toBe(
+      `<!-- BEGIN:${acme.npmScope.slice(1)}-agent-rules -->`,
+    );
   });
 
   it('renames the foundations markers, which the token build names after the prefix', () => {
-    expect(toAcme(`<!-- ${fossil.cssPrefix}:foundations:start -->`)).toBe(
+    expect(toAcme(`<!-- ${dino.cssPrefix}:foundations:start -->`)).toBe(
       `<!-- ${acme.cssPrefix}:foundations:start -->`,
     );
-    expect(toAcme(`<!-- ${fossil.cssPrefix}:foundations:end -->`)).toBe(
+    expect(toAcme(`<!-- ${dino.cssPrefix}:foundations:end -->`)).toBe(
       `<!-- ${acme.cssPrefix}:foundations:end -->`,
     );
   });
@@ -65,7 +65,7 @@ describe('rename', () => {
   it('renames the scope where a badge label spells it percent-encoded', () => {
     expect(
       toAcme(
-        `https://img.shields.io/npm/v/${fossil.npmScope}/react?label=%40${fossil.npmScope.slice(1)}%2Freact`,
+        `https://img.shields.io/npm/v/${dino.npmScope}/react?label=%40${dino.npmScope.slice(1)}%2Freact`,
       ),
     ).toBe(
       `https://img.shields.io/npm/v/${acme.npmScope}/react?label=%40${acme.npmScope.slice(1)}%2Freact`,
@@ -73,10 +73,10 @@ describe('rename', () => {
   });
 
   it('renames the repository in its URLs', () => {
-    expect(toAcme(`git+https://github.com/${fossil.repo}.git`)).toBe(
+    expect(toAcme(`git+https://github.com/${dino.repo}.git`)).toBe(
       `git+https://github.com/${acme.repo}.git`,
     );
-    expect(toAcme(`https://github.com/${fossil.repo}/issues`)).toBe(
+    expect(toAcme(`https://github.com/${dino.repo}/issues`)).toBe(
       `https://github.com/${acme.repo}/issues`,
     );
   });
@@ -91,16 +91,16 @@ describe('rename', () => {
       // The vendor key in a token file, which stays. The CSS prefix is rewritten with its -- and
       // - around it, or with its colon, so the bare word isn't one: the Figma stamp is the prefix
       // itself and never a literal here.
-      `getSharedPluginData('${fossil.cssPrefix}', key)`,
-      'com.ibrahimmoazzam.fossil',
+      `getSharedPluginData('${dino.cssPrefix}', key)`,
+      'com.ibrahimmoazzam.dino',
       // Local names, generic already, so there is nothing to rename.
       'brand.config.json',
-      '.claude/skills/fossil-figma-sync/SKILL.md',
+      '.claude/skills/dino-figma-sync/SKILL.md',
       // Longer names that start with the old ones.
-      `${fossil.npmScope}er/react`,
-      `my-${fossil.cssPrefix}-agents-md`,
-      `--${fossil.cssPrefix}ized-`,
-      `${fossil.repo}-notes`,
+      `${dino.npmScope}er/react`,
+      `my-${dino.cssPrefix}-agents-md`,
+      `--${dino.cssPrefix}ized-`,
+      `${dino.repo}-notes`,
     ])
       expect(toAcme(text)).toBe(text);
   });
@@ -116,16 +116,14 @@ describe('rename', () => {
   });
 
   it('rewrites nothing when nothing changes', () => {
-    expect(rewrites(fossil, fossil)).toEqual([]);
-    expect(rewrites(fossil, { ...fossil, name: 'Other' })).toEqual([]);
+    expect(rewrites(dino, dino)).toEqual([]);
+    expect(rewrites(dino, { ...dino, name: 'Other' })).toEqual([]);
   });
 });
 
 describe('repoOf', () => {
   it('reads owner and name from the URLs package.json holds', () => {
-    expect(repoOf(`git+https://github.com/${fossil.repo}.git`)).toBe(
-      fossil.repo,
-    );
+    expect(repoOf(`git+https://github.com/${dino.repo}.git`)).toBe(dino.repo);
     expect(repoOf(`https://github.com/${acme.repo}`)).toBe(acme.repo);
     expect(repoOf(`git@github.com:${acme.repo}.git`)).toBe(acme.repo);
   });

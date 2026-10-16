@@ -1,14 +1,14 @@
 ---
 name: fossil-figma-sync
-description: Syncs Fossil Design's tokens with Figma variables, and builds and checks Fossil's Figma component library, through the Figma MCP server's use_figma tool. Use when asked to apply or push tokens to Figma, update Figma variables from code, pull or bring back value changes a designer made in Figma, read Figma variables, open a pull request from Figma edits, or build, update or check the component library in Figma.
+description: Syncs Dino Design's tokens with Figma variables, and builds and checks Dino Design's Figma component library, through the Figma MCP server's use_figma tool. Use when asked to apply or push tokens to Figma, update Figma variables from code, pull or bring back value changes a designer made in Figma, read Figma variables, open a pull request from Figma edits, or build, update or check the component library in Figma.
 compatibility: Needs the Figma MCP server with use_figma and Figma's figma-use skill (and figma-generate-library for the component library), a Full seat with edit access to the file, and git, pnpm and gh.
 ---
 
-# Fossil Figma sync
+# Dino Design Figma sync
 
-Fossil's tokens live in git, in `packages/tokens/src`. This skill puts them into Figma as variables, brings back the values designers change in Figma as a pull request, and builds the component library from code. The logic is Fossil's own tested code in `packages/figma-sync`. Your job is to carry its generated scripts to Figma and its results back, unchanged, and to build each component's frames from the spec it writes.
+Dino Design's tokens live in git, in `packages/tokens/src`. This skill puts them into Figma as variables, brings back the values designers change in Figma as a pull request, and builds the component library from code. The logic is Dino Design's own tested code in `packages/figma-sync`. Your job is to carry its generated scripts to Figma and its results back, unchanged, and to build each component's frames from the spec it writes.
 
-Fossil's Figma library is two files, each published as a library (ADR 0018):
+Dino Design's Figma library is two files, each published as a library (ADR 0018):
 
 - **The foundations file:** the variables, the text and effect styles, and the icons. The sync, the styles script and the foundations check run here.
 - **The components file:** the components, bound to the foundations library's variables, styles and icons. Components are built and checked here.
@@ -122,7 +122,7 @@ After a release that changes a component, run the spec and the check again, and 
 
 Each was measured live; `docs/Learnings.md` has the detail.
 
-- A script whose text contains an `svg` tag is rewritten by `use_figma`, which breaks every Fossil script's hash. Build SVG markup at run time.
+- A script whose text contains an `svg` tag is rewritten by `use_figma`, which breaks every Dino Design script's hash. Build SVG markup at run time.
 - `figma.skipInvisibleInstanceChildren` starts on, which hides what's inside a hidden instance, such as a Button's hidden icon. Turn it off before reading or changing one.
 - A slot and its `SLOT` property share one name. To keep a layer name from the sheet, such as `frame`, put the slot inside that layer.
 - A new slot has no auto layout. Set its `layoutMode` before a child fills it.

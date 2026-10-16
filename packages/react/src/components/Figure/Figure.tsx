@@ -6,7 +6,7 @@ import hidden from '../VisuallyHidden/VisuallyHidden.module.css';
 import styles from './Figure.module.css';
 
 export interface FigureProps {
-  /** The media: a plain `<img>`, `next/image`, `<picture>` or `<video>`. Fossil frames it. */
+  /** The media: a plain `<img>`, `next/image`, `<picture>` or `<video>`. Dino Design frames it. */
   children: ReactNode;
   /**
    * Shown under the media, and tied to it as its caption. Without one, only the frame renders:

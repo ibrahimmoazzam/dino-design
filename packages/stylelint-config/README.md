@@ -1,6 +1,6 @@
 # @dino-labs/stylelint-config
 
-The shared Stylelint config for [Fossil Design](https://github.com/ibrahimmoazzam/dino-design), an open-source agentic design system. It keeps stylesheets on-system: semantic tokens instead of raw values, and padding and `gap` instead of margins.
+The shared Stylelint config for [Dino Design](https://github.com/ibrahimmoazzam/dino-design), an open-source agentic design system. It keeps stylesheets on-system: semantic tokens instead of raw values, and padding and `gap` instead of margins.
 
 > **Early release.** Versions `0.x` may tighten rules between minor versions. The release notes list each change.
 
@@ -18,7 +18,7 @@ export { default } from '@dino-labs/stylelint-config';
 ## What it checks
 
 - **Tokens, not raw values.** Colour, fill, stroke, padding, gap, radius, font family, size and weight, letter-spacing, line-height and durations take a custom property, including inside shorthands such as `border` and `transition`. Plain keywords such as `inherit`, `transparent`, `currentColor`, `none` and `0` are fine.
-- **Custom properties that exist.** Every `var()` names a Fossil token, one of your site tokens, or a property declared in the same stylesheet. A `var()` with a fallback, such as `var(--card-gap, var(--dino-space-m))`, is a knob and passes.
+- **Custom properties that exist.** Every `var()` names a Dino Design token, one of your site tokens, or a property declared in the same stylesheet. A `var()` with a fallback, such as `var(--card-gap, var(--dino-space-m))`, is a knob and passes.
 - **Semantic tokens only.** Primitive tokens such as `--dino-base-color-gray-600` are rejected, and so is a raw colour anywhere, local custom properties and shadows included. A deprecated token is rejected with its replacement named.
 - **No margins** except `0`.
 - **Disable comments explain themselves.** Each needs a reason after `--`, must disable something, and must name a real rule.
@@ -32,7 +32,7 @@ export { default } from '@dino-labs/stylelint-config';
 
 ## Site tokens
 
-An app with tokens of its own, such as a brand colour Fossil doesn't have, names their files:
+An app with tokens of its own, such as a brand colour Dino Design doesn't have, names their files:
 
 ```js
 // stylelint.config.js
@@ -41,7 +41,7 @@ import { brand } from '@dino-labs/stylelint-config';
 export default brand({ siteTokens: ['src/styles/site-tokens.css'] });
 ```
 
-Their custom properties count as known everywhere. Inside those files, and only there, a token may alias a Fossil primitive or hold a raw value:
+Their custom properties count as known everywhere. Inside those files, and only there, a token may alias a Dino Design primitive or hold a raw value:
 
 ```css
 /* src/styles/site-tokens.css */

@@ -1,8 +1,8 @@
-# Fossil Design
+# Dino Design
 
-Fossil Design, or Fossil for short, is an open-source agentic design system: a design system built for AI agents to stay on-system from design to code. Tokens in git flow into CSS, typed React components, Figma variables and a generated Figma component library, with lint configs, agent docs and Figma Make guidelines that keep generated UI on-system. Teams adopt it by forking it as a template. The published `@dino-labs/*` packages are the reference brand, harvested from the author's portfolio site.
+Dino Design, or Dino for short, is an open-source agentic design system: a design system built for AI agents to stay on-system from design to code. Tokens in git flow into CSS, typed React components, Figma variables and a generated Figma component library, with lint configs, agent docs and Figma Make guidelines that keep generated UI on-system. Teams adopt it by forking it as a template. Dino Design is a fork of Fossil Design, and its `@dino-labs/*` packages carry the reference brand it inherited, harvested from that author's portfolio site.
 
-The repo foundation, the token build, the Figma sync, `@dino-labs/react`, both lint configs, the Figma component library and the agent context layer are in place. The docs, the `AGENTS.md` block and the Figma Make guidelines are bundled in `@dino-labs/react`, and the Figma library is two published files, foundations and components. Phase 8, documentation and dogfooding, is next. Phase 7, drift measurement, is deferred to a later release, and `docs/drift-eval.md` holds its design. `docs/PRD.md` is the spec: phases, tasks and exit criteria. `docs/Learnings.md` holds the research and the reason behind each decision.
+The repo foundation, the token build, the Figma sync, `@dino-labs/react`, both lint configs, the Figma component library and the agent context layer are in place. The docs, the `AGENTS.md` block and the Figma Make guidelines are bundled in `@dino-labs/react`, and the Figma library is two files, foundations and components. Adopting that pipeline for this brand is what `docs/adopting.md` sets out step by step: the rename is done, and the brand's token values, the first publish under `@dino-labs` and the two Figma files come next. `docs/PRD.md` is Fossil's spec, with the phases, tasks and exit criteria the pipeline was built against, and `docs/Learnings.md` holds the research and the reason behind each decision. Phase 7, drift measurement, is deferred to a later release, and `docs/drift-eval.md` holds its design.
 
 ## Commands
 
@@ -17,7 +17,7 @@ pnpm typecheck                   # tsc for the root files, then every package
 pnpm test                        # every Vitest project, once
 pnpm check:packages              # pack each published package, then run publint and attw on it
 pnpm smoke                       # install the tarballs into a Next 16 app and a Vite app on React 18
-pnpm escapes [base]              # count disable comments for Fossil's rules, and those added since base
+pnpm escapes [base]              # count disable comments for Dino Design's rules, and those added since base
 pnpm changeset                   # record a release note for a package change
 pnpm rename --name … --scope …   # rename a fork: name, CSS prefix, npm scope, repository
 ```
@@ -26,7 +26,7 @@ pnpm rename --name … --scope …   # rename a fork: name, CSS prefix, npm scop
 - One test project: `pnpm test --project workspace`. Nested projects take their parent's name: `pnpm test --project 'react*'` runs `react (unit)`, `react (browser)` and `react (storybook)`. Watch mode: `pnpm exec vitest`.
 - The browser tests need Chromium once per machine: `pnpm --filter react exec playwright install chromium`.
 - Storybook: `pnpm --filter react storybook`, at `localhost:6006`. Its MCP server is at `localhost:6006/mcp`, and `.mcp.json` registers it for Claude Code.
-- The docs site is Storybook's static build, `pnpm --filter react build-storybook`, deployed to GitHub Pages from `main` at `fossil.ibrahimmoazzam.com`. Its pages are MDX in `packages/react/docs-site/`, and most show a repo file as it is, through `RepoDoc`; `docs-site/pages.ts` maps each file to its page. The site links the first mention of each known name in a section, from `docs-site/links.ts`: add a tool, package or file there to link it. Its title, description, URL and preview card live in `docs-site/meta.ts`; `scripts/site-meta.ts` writes them into the built page, because Storybook's own title names Storybook and it writes no metadata of its own.
+- The docs site is Storybook's static build, `pnpm --filter react build-storybook`, deployed to GitHub Pages from `main` at `ibrahimmoazzam.github.io/dino-design`. Its pages are MDX in `packages/react/docs-site/`, and most show a repo file as it is, through `RepoDoc`; `docs-site/pages.ts` maps each file to its page. The site links the first mention of each known name in a section, from `docs-site/links.ts`: add a tool, package or file there to link it. Its title, description, URL and preview card live in `docs-site/meta.ts`; `scripts/site-meta.ts` writes them into the built page, because Storybook's own title names Storybook and it writes no metadata of its own.
 - `pnpm --filter react run docs` writes the docs bundled in `@dino-labs/react` from each component's JSDoc contract and its stories tagged `example`. From the same sources it writes the block the package's `dino-agents-md` bin puts in an app's `AGENTS.md`, and the Figma Make guidelines in `guidelines/`. The package's build runs it last, and fails on an undocumented component or a block over 8 KB (ADRs 0016 and 0017). `packages/react/AGENTS.md` has the format.
 - `pnpm smoke [next|vite]` copies the apps in `smoke/` to a temporary folder, installs the packed tarballs with npm, then type-checks, lints, builds and checks what they render. Then it runs `dino-agents-md` in each app and checks every installed file the block and the Make guidelines name. Last, it copies the off-system component in `smoke/off-system/` into each app and expects lint to reject every line of it. It needs the network. Set `KEEP_SMOKE=1` to keep the folder.
 - `pnpm --filter react generate` writes `Box`'s CSS and the `.module.css.d.ts` types. The react package's `build` and `typecheck` run it first. Neither output is committed.
@@ -69,7 +69,7 @@ smoke/off-system       a deliberately off-system component that lint must reject
 docs/PRD.md            the spec: phases, tasks, exit criteria
 docs/Learnings.md      the research behind each decision
 docs/key-decisions.md  the weightiest decisions, what each rejected, and why
-docs/adopting.md       how a team adopts Fossil as its own design system
+docs/adopting.md       how a team adopts Dino Design as its own design system
 docs/decisions         ADRs
 docs/gaps.md           logging gaps, and recording a decision for each
 docs/drift-eval.md     the planned drift eval: method, harness, prior art
@@ -103,11 +103,11 @@ docs/drift-eval.md     the planned drift eval: method, harness, prior art
 
 ### Gaps
 
-A gap is a place where Fossil fell short: something couldn't be built from its components and tokens, something generic was rebuilt, or an escape was logged. Draft it with four fields, show the person, and let them decide whether to file it on the gap form:
+A gap is a place where Dino Design fell short: something couldn't be built from its components and tokens, something generic was rebuilt, or an escape was logged. Draft it with four fields, show the person, and let them decide whether to file it on the gap form:
 
 - **Where:** the file, and the task.
 - **Needed:** what the task needed. The need, not a solution.
-- **Offered:** what Fossil offered, and why it fell short.
+- **Offered:** what Dino Design offered, and why it fell short.
 - **Evidence:** the code written instead, or the escape comment.
 
 `docs/gaps.md` covers reviewing gaps and closing each with a decision: component, pattern or keep local.
@@ -289,7 +289,7 @@ A change is done when all of these pass. Run them in this order: `pnpm build && 
 | Check                                                                                                                                             | Command                                            | Covers today                                                                                                                                                                                                                                                                |
 | ------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | The token build, with its validation                                                                                                              | `pnpm --filter tokens build`, part of `pnpm build` | Validation of the DTCG source, then every Style Dictionary output                                                                                                                                                                                                           |
-| ESLint and Stylelint, with Fossil's shared configs                                                                                                | `pnpm lint`                                        | ESLint with Fossil's own config on every script and component, then Prettier; Stylelint with Fossil's own config on every stylesheet                                                                                                                                        |
+| ESLint and Stylelint, with Dino Design's shared configs                                                                                           | `pnpm lint`                                        | ESLint with Dino Design's own config on every script and component, then Prettier; Stylelint with Dino Design's own config on every stylesheet                                                                                                                              |
 | Type-checking, after generating CSS Module types                                                                                                  | `pnpm typecheck`                                   | All packages, with CSS Module types generated first                                                                                                                                                                                                                         |
 | Tests: Storybook interaction tests, axe checks with zero violations, real-input browser tests for native behaviour such as Escape on a `<dialog>` | `pnpm test`                                        | Workspace, token, lint config and React unit tests, including the off-system component; every story with axe; real-input tests for focus, hover and the native behaviour of every interactive component                                                                     |
 | Packed tarballs pass publint and attw                                                                                                             | `pnpm check:packages`                              | Every published package                                                                                                                                                                                                                                                     |
