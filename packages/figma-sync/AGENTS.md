@@ -1,6 +1,6 @@
 # figma-sync
 
-Fossil's own code for syncing tokens with Figma variables, and for generating and checking the Figma component library. To run either, follow the `fossil-figma-sync` skill in `.claude/skills/`. This file covers working on the code. ADR 0007 explains the sync, ADR 0015 the library, and ADR 0018 its two files: the foundations, with the variables, styles and icons, and the components, which import them.
+Dino Design's own code for syncing tokens with Figma variables, and for generating and checking the Figma component library. To run either, follow the `fossil-figma-sync` skill in `.claude/skills/`. This file covers working on the code. ADR 0007 explains the sync, ADR 0015 the library, and ADR 0018 its two files: the foundations, with the variables, styles and icons, and the components, which import them.
 
 ## Commands
 

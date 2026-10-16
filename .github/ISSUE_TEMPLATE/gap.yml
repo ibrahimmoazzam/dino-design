@@ -1,12 +1,12 @@
 name: Gap
-description: Something an app couldn't build from Fossil, rebuilt itself, or needed an escape for.
+description: Something an app couldn't build from Dino Design, rebuilt itself, or needed an escape for.
 title: 'Gap: '
 labels: [gap]
 body:
   - type: markdown
     attributes:
       value: |
-        A gap records where Fossil fell short. Gaps are reviewed at each release, and each is closed with a decision: a new **component**, a documented **pattern**, or **keep local**. Three gaps for the same need trigger a review; they don't promote anything by themselves.
+        A gap records where Dino Design fell short. Gaps are reviewed at each release, and each is closed with a decision: a new **component**, a documented **pattern**, or **keep local**. Three gaps for the same need trigger a review; they don't promote anything by themselves.
   - type: input
     id: where
     attributes:
@@ -25,7 +25,7 @@ body:
   - type: textarea
     id: offered
     attributes:
-      label: What Fossil offered
+      label: What Dino Design offered
       description: The closest component, prop, token or pattern, and why it didn't fit.
     validations:
       required: true
@@ -41,8 +41,8 @@ body:
     attributes:
       label: How it showed up
       options:
-        - Couldn't build it from Fossil
-        - Rebuilt something Fossil might need
+        - Couldn't build it from Dino Design
+        - Rebuilt something Dino Design might need
         - Added a lint escape
     validations:
       required: true

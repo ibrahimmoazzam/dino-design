@@ -156,7 +156,7 @@ export const Default: Story = { tags: ['example'], args: { tone: 'b', children: 
     });
   });
 
-  it('prints a render as written, with React and Fossil imports', () => {
+  it('prints a render as written, with React and Dino Design imports', () => {
     const {
       examples: [example],
     } = examples(`
@@ -227,8 +227,8 @@ export const Undescribed: Story = { tags: ['example'] };`);
 
 describe('the docs placeholders', () => {
   it('fills the ones it knows and fails on the rest', () => {
-    expect(fill('{{name}} and {{ default }}', { name: 'Fossil' })).toBe(
-      'Fossil and {{ default }}',
+    expect(fill('{{name}} and {{ default }}', { name: 'Dino Design' })).toBe(
+      'Dino Design and {{ default }}',
     );
     expect(() => fill('{{nope}}', {})).toThrow('unknown placeholder {{nope}}');
   });

@@ -19,7 +19,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        # The oldest Node that Fossil supports, and the active LTS.
+        # The oldest Node that Dino Design supports, and the active LTS.
         node: ['22.14.0', '24']
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1

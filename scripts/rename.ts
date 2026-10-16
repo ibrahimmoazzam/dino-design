@@ -1,6 +1,6 @@
 // Renames a fork: the system name, CSS prefix, npm scope and GitHub repository. Changing
 // brand.config.json alone isn't enough, because package names, imports, stylesheets and
-// repository URLs spell the old values out. Fossil's history (docs/ and changelogs) stays as written.
+// repository URLs spell the old values out. The system's history (docs/ and changelogs) stays as written.
 import { execFileSync } from 'node:child_process';
 import { readFileSync, writeFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
@@ -21,7 +21,7 @@ export const patterns = {
   repo: /^[A-Za-z0-9-]+\/[A-Za-z0-9._-]+$/,
 };
 
-/** Files that record Fossil's own history and reasoning, which a rename shouldn't rewrite. */
+/** Files that record the system's own history and reasoning, which a rename shouldn't rewrite. */
 export const keep = [
   ':!docs/**',
   ':!**/CHANGELOG.md',
@@ -68,7 +68,7 @@ export function rewrites(from: Identity, to: Identity): Rewrite[] {
         '(?![\\w-])',
       ),
     );
-    // A shields.io badge takes its label percent-encoded, so the scope reads %40fossil-design.
+    // A shields.io badge takes its label percent-encoded, so the scope reads %40dino-labs.
     list.push(
       rewrite(
         `%40${from.npmScope.slice(1)}`,
@@ -91,7 +91,7 @@ export function rewrites(from: Identity, to: Identity): Rewrite[] {
       ),
     );
     // The token build names AGENTS.md's foundations markers after the prefix, and refuses a file
-    // whose markers it can't find, so a fork that kept Fossil's would fail its first build.
+    // whose markers it can't find, so a fork that kept Dino Design's would fail its first build.
     list.push(
       rewrite(
         `${from.cssPrefix}:foundations`,

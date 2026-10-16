@@ -56,7 +56,7 @@
   color: var(--dino-color-text-default);
 }
 
-/* Fossil's own fade and scale. A panel rendered through renderPanel animates itself instead. */
+/* Dino Design's own fade and scale. A panel rendered through renderPanel animates itself instead. */
 .animated {
   transition-duration: var(--dino-motion-duration-default);
   transition-property: opacity, scale;

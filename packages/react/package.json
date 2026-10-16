@@ -1,7 +1,7 @@
 {
   "name": "@dino-labs/react",
   "version": "0.5.1",
-  "description": "React components for Fossil Design, styled only with design tokens and precompiled to plain JavaScript and one stylesheet.",
+  "description": "React components for Dino Design, styled only with design tokens and precompiled to plain JavaScript and one stylesheet.",
   "keywords": [
     "design-system",
     "react",

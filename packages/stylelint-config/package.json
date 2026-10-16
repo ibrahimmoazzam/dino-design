@@ -1,7 +1,7 @@
 {
   "name": "@dino-labs/stylelint-config",
   "version": "0.2.0",
-  "description": "Shared Stylelint config for Fossil Design: semantic tokens only, no raw values, no margins.",
+  "description": "Shared Stylelint config for Dino Design: semantic tokens only, no raw values, no margins.",
   "keywords": [
     "design-system",
     "stylelint",

@@ -15,7 +15,7 @@ export type CardProps = {
   as?: CardElement;
   /** The card's body, set in the prose style. */
   children: ReactNode;
-  /** Classes from the app's own stylesheet, added to Fossil's. */
+  /** Classes from the app's own stylesheet, added to Dino Design's. */
   className?: string;
 } & (
   | {
