@@ -1,6 +1,6 @@
 import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
-import { layoutElements } from '@fossil-design/eslint-config';
+import { layoutElements } from '@dino-labs/eslint-config';
 import { ESLint } from 'eslint';
 import stylelint from 'stylelint';
 import tseslint from 'typescript-eslint';

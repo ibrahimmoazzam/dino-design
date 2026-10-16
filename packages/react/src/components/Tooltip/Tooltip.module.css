@@ -3,15 +3,15 @@
   composes: surface from '../Floating/floating.module.css';
   display: flex;
   align-items: center;
-  gap: var(--fossil-space-2xs);
-  padding-block: var(--fossil-space-xs);
-  padding-inline: var(--fossil-space-s);
-  border-radius: var(--fossil-radius-compact);
-  font-family: var(--fossil-font-family-mono);
-  font-size: var(--fossil-text-fine-font-size);
-  font-weight: var(--fossil-text-fine-font-weight);
-  letter-spacing: var(--fossil-text-fine-letter-spacing);
-  line-height: var(--fossil-text-fine-line-height);
+  gap: var(--dino-space-2xs);
+  padding-block: var(--dino-space-xs);
+  padding-inline: var(--dino-space-s);
+  border-radius: var(--dino-radius-compact);
+  font-family: var(--dino-font-family-mono);
+  font-size: var(--dino-text-fine-font-size);
+  font-weight: var(--dino-text-fine-font-weight);
+  letter-spacing: var(--dino-text-fine-letter-spacing);
+  line-height: var(--dino-text-fine-line-height);
 }
 
 .arrow {

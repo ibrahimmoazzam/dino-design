@@ -1,4 +1,4 @@
-import type { TokenKey } from '@fossil-design/tokens';
+import type { TokenKey } from '@dino-labs/tokens';
 import {
   createElement,
   forwardRef,

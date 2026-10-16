@@ -63,7 +63,7 @@ From the foundations file.
 4. If it wrote no changes, tell the user what the report says and stop.
 5. Otherwise, open a pull request:
    1. `git switch -c tokens/figma-$(date +%Y%m%d-%H%M)`.
-   2. Write a changeset, `.changeset/figma-<same timestamp>.md`, marking `'@fossil-design/tokens': patch`. Use the report's list of changes as its text.
+   2. Write a changeset, `.changeset/figma-<same timestamp>.md`, marking `'@dino-labs/tokens': patch`. Use the report's list of changes as its text.
    3. Run `pnpm build && pnpm lint && pnpm typecheck && pnpm test`. The build updates the foundations block in `AGENTS.md`; commit it too.
    4. Commit as `feat(tokens): bring back value changes from Figma`, push, and run `gh pr create --title "Token values changed in Figma" --body-file packages/figma-sync/.figma/report.md`.
 6. Tell the user about anything the report refused or marked as a conflict. Those need a change in code, and the report says which.

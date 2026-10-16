@@ -1,5 +1,5 @@
 {
-  "name": "@fossil-design/eslint-config",
+  "name": "@dino-labs/eslint-config",
   "version": "0.2.0",
   "description": "Shared ESLint config for Fossil Design: layout goes through Box, and every disable says why.",
   "keywords": [
@@ -8,13 +8,13 @@
     "eslintconfig",
     "eslint-config"
   ],
-  "homepage": "https://github.com/ibrahimmoazzam/fossil-design/tree/main/packages/eslint-config#readme",
-  "bugs": "https://github.com/ibrahimmoazzam/fossil-design/issues",
+  "homepage": "https://github.com/ibrahimmoazzam/dino-design/tree/main/packages/eslint-config#readme",
+  "bugs": "https://github.com/ibrahimmoazzam/dino-design/issues",
   "license": "MIT",
   "author": "Ibrahim Moazzam (https://github.com/ibrahimmoazzam)",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ibrahimmoazzam/fossil-design.git",
+    "url": "git+https://github.com/ibrahimmoazzam/dino-design.git",
     "directory": "packages/eslint-config"
   },
   "type": "module",

@@ -1,23 +1,23 @@
 /* Parked above the viewport until focused, but never removed from the tab order. */
 .skipLink {
   position: absolute;
-  inset-block-start: var(--fossil-space-xs);
-  inset-inline-start: var(--fossil-space-xs);
-  z-index: var(--fossil-layer-overlay);
-  padding-block: var(--fossil-space-xs);
-  padding-inline: var(--fossil-space-m);
-  border-radius: var(--fossil-radius-compact);
-  background-color: var(--fossil-color-background-page);
-  color: var(--fossil-color-text-default);
-  font-family: var(--fossil-text-body-font-family);
-  font-size: var(--fossil-text-body-font-size);
-  font-weight: var(--fossil-font-weight-strong);
-  letter-spacing: var(--fossil-text-body-letter-spacing);
-  line-height: var(--fossil-text-body-line-height);
+  inset-block-start: var(--dino-space-xs);
+  inset-inline-start: var(--dino-space-xs);
+  z-index: var(--dino-layer-overlay);
+  padding-block: var(--dino-space-xs);
+  padding-inline: var(--dino-space-m);
+  border-radius: var(--dino-radius-compact);
+  background-color: var(--dino-color-background-page);
+  color: var(--dino-color-text-default);
+  font-family: var(--dino-text-body-font-family);
+  font-size: var(--dino-text-body-font-size);
+  font-weight: var(--dino-font-weight-strong);
+  letter-spacing: var(--dino-text-body-letter-spacing);
+  line-height: var(--dino-text-body-line-height);
   text-decoration: none;
   transform: translateY(-150%);
-  transition: transform var(--fossil-motion-duration-fast)
-    var(--fossil-motion-easing-standard);
+  transition: transform var(--dino-motion-duration-fast)
+    var(--dino-motion-easing-standard);
 }
 
 .skipLink:focus {
@@ -25,8 +25,8 @@
 }
 
 .skipLink:focus-visible {
-  outline: var(--fossil-border-focus);
-  outline-offset: var(--fossil-focus-ring-offset);
+  outline: var(--dino-border-focus);
+  outline-offset: var(--dino-focus-ring-offset);
 }
 
 @media (prefers-reduced-motion: reduce) {

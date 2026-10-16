@@ -11,7 +11,7 @@
   block-size: 100%;
   max-inline-size: none;
   max-block-size: none;
-  padding: var(--fossil-space-l);
+  padding: var(--dino-space-l);
   border-width: 0;
   background-color: transparent;
 }
@@ -34,11 +34,11 @@
 .scrim {
   position: fixed;
   inset: 0;
-  background-color: var(--fossil-color-background-scrim);
+  background-color: var(--dino-color-background-scrim);
   pointer-events: none;
   backdrop-filter: blur(8px);
-  transition: opacity var(--fossil-motion-duration-default)
-    var(--fossil-motion-easing-standard);
+  transition: opacity var(--dino-motion-duration-default)
+    var(--dino-motion-easing-standard);
 }
 
 .panel {
@@ -46,21 +46,21 @@
   display: flex;
   overflow: hidden auto;
   flex-direction: column;
-  gap: var(--fossil-space-l);
+  gap: var(--dino-space-l);
   inline-size: min(100%, 32rem);
   max-block-size: 100%;
-  padding: var(--fossil-space-xl);
-  border-radius: var(--fossil-radius-surface);
-  background-color: var(--fossil-color-background-surface);
-  box-shadow: var(--fossil-shadow-overlay);
-  color: var(--fossil-color-text-default);
+  padding: var(--dino-space-xl);
+  border-radius: var(--dino-radius-surface);
+  background-color: var(--dino-color-background-surface);
+  box-shadow: var(--dino-shadow-overlay);
+  color: var(--dino-color-text-default);
 }
 
 /* Fossil's own fade and scale. A panel rendered through renderPanel animates itself instead. */
 .animated {
-  transition-duration: var(--fossil-motion-duration-default);
+  transition-duration: var(--dino-motion-duration-default);
   transition-property: opacity, scale;
-  transition-timing-function: var(--fossil-motion-easing-standard);
+  transition-timing-function: var(--dino-motion-easing-standard);
 }
 
 .dialog[data-state='closed'] .scrim,
@@ -87,11 +87,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: var(--fossil-space-m);
+  gap: var(--dino-space-m);
 }
 
 .header:has(.headerContent) {
-  gap: var(--fossil-space-xs);
+  gap: var(--dino-space-xs);
 }
 
 /* Focused when the dialog opens, so a screen reader announces it; it's not a control. */
@@ -104,7 +104,7 @@
   flex: 1;
   align-items: center;
   justify-content: space-between;
-  gap: var(--fossil-space-xs);
+  gap: var(--dino-space-xs);
 }
 
 @media (prefers-reduced-motion: reduce) {

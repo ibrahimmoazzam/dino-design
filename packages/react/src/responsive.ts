@@ -1,4 +1,4 @@
-import type { Breakpoint } from '@fossil-design/tokens';
+import type { Breakpoint } from '@dino-labs/tokens';
 
 /** Where a responsive value applies: `default` covers every width, and each breakpoint overrides it from its min-width up. */
 export type ResponsiveKey = 'default' | Breakpoint;

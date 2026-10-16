@@ -1,5 +1,5 @@
 {
-  "name": "@fossil-design/stylelint-config",
+  "name": "@dino-labs/stylelint-config",
   "version": "0.2.0",
   "description": "Shared Stylelint config for Fossil Design: semantic tokens only, no raw values, no margins.",
   "keywords": [
@@ -8,13 +8,13 @@
     "stylelint-config",
     "design-tokens"
   ],
-  "homepage": "https://github.com/ibrahimmoazzam/fossil-design/tree/main/packages/stylelint-config#readme",
-  "bugs": "https://github.com/ibrahimmoazzam/fossil-design/issues",
+  "homepage": "https://github.com/ibrahimmoazzam/dino-design/tree/main/packages/stylelint-config#readme",
+  "bugs": "https://github.com/ibrahimmoazzam/dino-design/issues",
   "license": "MIT",
   "author": "Ibrahim Moazzam (https://github.com/ibrahimmoazzam)",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ibrahimmoazzam/fossil-design.git",
+    "url": "git+https://github.com/ibrahimmoazzam/dino-design.git",
     "directory": "packages/stylelint-config"
   },
   "type": "module",
@@ -36,7 +36,7 @@
     "prepack": "pnpm run build"
   },
   "dependencies": {
-    "@fossil-design/tokens": "workspace:^",
+    "@dino-labs/tokens": "workspace:^",
     "stylelint-declaration-strict-value": "^1.12.1",
     "stylelint-value-no-unknown-custom-properties": "^6.1.1"
   },

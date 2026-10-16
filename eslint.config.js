@@ -1,5 +1,5 @@
 import js from '@eslint/js';
-import { brand } from '@fossil-design/eslint-config';
+import { brand } from '@dino-labs/eslint-config';
 import { defineConfig, globalIgnores } from 'eslint/config';
 import reactHooks from 'eslint-plugin-react-hooks';
 import tseslint from 'typescript-eslint';

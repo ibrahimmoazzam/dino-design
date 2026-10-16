@@ -7,7 +7,7 @@ export interface TokenMetadata {
   tier: 'primitive' | 'semantic';
   /** The DTCG type, such as `color`, `dimension` or `typography`. */
   type: string;
-  /** The custom property, such as `--fossil-color-text-muted`. A typography token has one per part. */
+  /** The custom property, such as `--dino-color-text-muted`. A typography token has one per part. */
   cssVar: string | Readonly<Record<string, string>>;
   /** The DTCG value, with every reference resolved. */
   value: unknown;

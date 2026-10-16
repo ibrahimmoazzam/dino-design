@@ -1,4 +1,4 @@
-import brand from '@fossil-design/eslint-config';
+import brand from '@dino-labs/eslint-config';
 import { defineConfig, globalIgnores } from 'eslint/config';
 import tseslint from 'typescript-eslint';
 

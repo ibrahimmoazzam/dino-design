@@ -11,8 +11,8 @@ import {
 const fossil: Identity = {
   name: 'Fossil Design',
   cssPrefix: 'fossil',
-  npmScope: '@fossil-design',
-  repo: 'ibrahimmoazzam/fossil-design',
+  npmScope: '@dino-labs',
+  repo: 'ibrahimmoazzam/dino-design',
 };
 const acme: Identity = {
   name: 'Acme Design',
@@ -24,7 +24,7 @@ const toAcme = (text: string) => rename(text, rewrites(fossil, acme));
 
 /**
  * Every fixture is written from the two identities rather than spelled out, because `pnpm rename`
- * rewrites this file along with the rest of a fork: a literal `--fossil-space-m` becomes the
+ * rewrites this file along with the rest of a fork: a literal `--dino-space-m` becomes the
  * fork's prefix while the expectation beside it keeps Fossil's, and the case fails for the one
  * reason that proves the rename worked.
  */

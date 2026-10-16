@@ -1,7 +1,7 @@
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { createRequire } from 'node:module';
-import { mediaQueries, tokenKeys } from '@fossil-design/tokens';
-import tokensJson from '@fossil-design/tokens/tokens.json' with { type: 'json' };
+import { mediaQueries, tokenKeys } from '@dino-labs/tokens';
+import tokensJson from '@dino-labs/tokens/tokens.json' with { type: 'json' };
 import iconNames from '../icons.json' with { type: 'json' };
 import { boxVariants, surfaceTokens } from '../src/components/Box/variants.ts';
 
@@ -84,7 +84,7 @@ function print(rules: Rule[], indent = ''): string {
 
 // Source order is the cascade: base rules first, then each breakpoint from narrowest to widest.
 const css = [
-  "/* Box's classes, generated from @fossil-design/tokens by scripts/generate.ts. Don't edit this file. */",
+  "/* Box's classes, generated from @dino-labs/tokens by scripts/generate.ts. Don't edit this file. */",
   print([['box', { 'box-sizing': 'border-box', margin: '0', padding: '0' }]]),
   print(responsiveRules('')),
   print(surfaceRules),

@@ -1,4 +1,4 @@
-import { brand } from '@fossil-design/stylelint-config';
+import { brand } from '@dino-labs/stylelint-config';
 
 /**
  * This repository lints its own stylesheets with the config it publishes, so consumers get a tested path.

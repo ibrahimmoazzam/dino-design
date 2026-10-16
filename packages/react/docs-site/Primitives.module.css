@@ -6,27 +6,27 @@
 }
 
 .checkerBase {
-  fill: var(--fossil-color-background-surface);
+  fill: var(--dino-color-background-surface);
 }
 
 .checkerSquare {
-  fill: var(--fossil-color-background-sunken);
+  fill: var(--dino-color-background-sunken);
 }
 
 .code {
-  color: var(--fossil-color-text-default);
-  font-family: var(--fossil-font-family-mono);
-  font-size: var(--fossil-text-fine-font-size);
+  color: var(--dino-color-text-default);
+  font-family: var(--dino-font-family-mono);
+  font-size: var(--dino-text-fine-font-size);
 }
 
 .name {
-  color: var(--fossil-color-text-default);
-  font-weight: var(--fossil-font-weight-strong);
+  color: var(--dino-color-text-default);
+  font-weight: var(--dino-font-weight-strong);
 }
 
 .value {
-  color: var(--fossil-color-text-default);
-  font-family: var(--fossil-font-family-mono);
+  color: var(--dino-color-text-default);
+  font-family: var(--dino-font-family-mono);
 }
 
 .swatches {
@@ -37,14 +37,14 @@
 
 .tile {
   overflow: hidden;
-  border: var(--fossil-border-default);
+  border: var(--dino-border-default);
 }
 
 .swatch {
   display: block;
   inline-size: 100%;
   block-size: auto;
-  border-block-end: var(--fossil-border-default);
+  border-block-end: var(--dino-border-default);
 }
 
 /* Storybook's docs styles mark list items; these lists are role="list", so they keep their
@@ -58,13 +58,13 @@
 /* Wide scales scroll within the column; the wrapper takes focus so the keyboard can scroll too. */
 .scroller {
   overflow-x: auto;
-  scrollbar-color: var(--fossil-color-border-strong) transparent;
+  scrollbar-color: var(--dino-color-border-strong) transparent;
   scrollbar-width: thin;
 }
 
 .scroller:focus-visible {
-  outline: var(--fossil-border-focus);
-  outline-offset: var(--fossil-focus-ring-offset);
+  outline: var(--dino-border-focus);
+  outline-offset: var(--dino-focus-ring-offset);
 }
 
 /* Storybook's docs styles make every table a block; the scroller's class outranks them. */
@@ -90,58 +90,58 @@
 }
 
 .table th {
-  padding-block: var(--fossil-space-xs);
-  padding-inline: 0 var(--fossil-space-m);
-  border-block-end: var(--fossil-border-strong);
-  color: var(--fossil-color-text-muted);
-  font-family: var(--fossil-text-label-font-family);
-  font-size: var(--fossil-text-label-font-size);
-  font-weight: var(--fossil-text-label-font-weight);
-  letter-spacing: var(--fossil-text-label-letter-spacing);
+  padding-block: var(--dino-space-xs);
+  padding-inline: 0 var(--dino-space-m);
+  border-block-end: var(--dino-border-strong);
+  color: var(--dino-color-text-muted);
+  font-family: var(--dino-text-label-font-family);
+  font-size: var(--dino-text-label-font-size);
+  font-weight: var(--dino-text-label-font-weight);
+  letter-spacing: var(--dino-text-label-letter-spacing);
   text-align: start;
   text-transform: uppercase;
 }
 
 .table td {
-  padding-block: var(--fossil-space-s);
-  padding-inline: 0 var(--fossil-space-m);
-  border-block-end: var(--fossil-border-default);
+  padding-block: var(--dino-space-s);
+  padding-inline: 0 var(--dino-space-m);
+  border-block-end: var(--dino-border-default);
   vertical-align: middle;
 }
 
 .bar {
-  fill: var(--fossil-color-accent-default);
+  fill: var(--dino-color-accent-default);
 }
 
 .shape {
-  fill: var(--fossil-color-background-sunken);
-  stroke: var(--fossil-color-border-strong);
-  stroke-width: var(--fossil-border-width-default);
+  fill: var(--dino-color-background-sunken);
+  stroke: var(--dino-color-border-strong);
+  stroke-width: var(--dino-border-width-default);
 }
 
 .stroke {
-  stroke: var(--fossil-color-text-default);
+  stroke: var(--dino-color-text-default);
 }
 
 .glyphs {
-  fill: var(--fossil-color-text-default);
-  font-family: var(--fossil-font-family-body);
+  fill: var(--dino-color-text-default);
+  font-family: var(--dino-font-family-body);
 }
 
 .label {
-  fill: var(--fossil-color-text-default);
-  font-family: var(--fossil-text-label-font-family);
-  font-size: var(--fossil-text-label-font-size);
+  fill: var(--dino-color-text-default);
+  font-family: var(--dino-text-label-font-family);
+  font-size: var(--dino-text-label-font-size);
 }
 
 .frame {
   fill: none;
-  stroke: var(--fossil-color-border-default);
-  stroke-width: var(--fossil-border-width-default);
+  stroke: var(--dino-color-border-default);
+  stroke-width: var(--dino-border-width-default);
 }
 
 .curve {
   fill: none;
-  stroke: var(--fossil-color-accent-default);
-  stroke-width: var(--fossil-border-width-default);
+  stroke: var(--dino-color-accent-default);
+  stroke-width: var(--dino-border-width-default);
 }

@@ -1,5 +1,5 @@
 import type { Preview } from '@storybook/react-vite';
-import '@fossil-design/tokens/tokens.css';
+import '@dino-labs/tokens/tokens.css';
 import { GLOBALS_UPDATED, SET_GLOBALS } from 'storybook/internal/core-events';
 import { addons } from 'storybook/preview-api';
 import { docsComponents } from '../docs-site/headings.tsx';

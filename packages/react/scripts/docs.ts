@@ -3,7 +3,7 @@
  * installed version. Everything comes from source: each component's JSDoc contract and props
  * through react-docgen-typescript, its examples from its stories tagged `example`, its variant
  * maps from the build, and the foundations and the token reference from the token build.
- * From the same sources it writes the block `fossil-agents-md` puts in an app's AGENTS.md, and
+ * From the same sources it writes the block `dino-agents-md` puts in an app's AGENTS.md, and
  * the Figma Make guidelines in guidelines/.
  *
  * It writes nothing and lists every problem if a component lacks part of its contract, a prop
@@ -19,7 +19,7 @@ import {
   writeFileSync,
 } from 'node:fs';
 import { createRequire } from 'node:module';
-import { breakpoints } from '@fossil-design/tokens';
+import { breakpoints } from '@dino-labs/tokens';
 import { dirname, join } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import {
@@ -83,7 +83,7 @@ export interface Inputs {
   root: string;
   /** The package's runtime exports. */
   exports: Record<string, unknown>;
-  /** The package name, such as `@fossil-design/react`. */
+  /** The package name, such as `@dino-labs/react`. */
   packageName: string;
 }
 
@@ -864,9 +864,7 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
   if (problems.length > 0) fail('the component docs');
 
   const header = `${pkg.name} ${pkg.version}, generated from its source. Matches the installed version.`;
-  const tokensDist = dirname(
-    require.resolve('@fossil-design/tokens/tokens.json'),
-  );
+  const tokensDist = dirname(require.resolve('@dino-labs/tokens/tokens.json'));
   const tokens = JSON.parse(
     readFileSync(join(tokensDist, 'tokens.json'), 'utf8'),
   ) as { tokens: Record<string, { tier: string; value: unknown }> };

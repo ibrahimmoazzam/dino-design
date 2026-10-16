@@ -29,7 +29,7 @@ export const Column: Story = {
     const style = getComputedStyle(stack);
     await expect(style.display).toBe('flex');
     await expect(style.flexDirection).toBe('column');
-    await expect(style.rowGap).toBe(tokenPx('--fossil-space-m'));
+    await expect(style.rowGap).toBe(tokenPx('--dino-space-m'));
   },
 };
 

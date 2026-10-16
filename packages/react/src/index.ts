@@ -1,4 +1,4 @@
-import '@fossil-design/tokens/tokens.css';
+import '@dino-labs/tokens/tokens.css';
 
 export {
   Box,
