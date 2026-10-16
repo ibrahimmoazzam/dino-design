@@ -1,6 +1,6 @@
 'use client';
 
-import { Button, Modal, Text } from '@fossil-design/react';
+import { Button, Modal, Text } from '@dino-labs/react';
 import { AnimatePresence, motion } from 'motion/react';
 import { useState } from 'react';
 

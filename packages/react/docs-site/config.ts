@@ -1,5 +1,5 @@
 import brand from '../../../brand.config.json' with { type: 'json' };
-import tokensFile from '@fossil-design/tokens/tokens.json';
+import tokensFile from '@dino-labs/tokens/tokens.json';
 import { fill, list } from '../scripts/template.ts';
 
 /** The faces the semantic font tokens name first, such as `Space Grotesk`. */

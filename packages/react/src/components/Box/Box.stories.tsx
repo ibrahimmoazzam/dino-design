@@ -27,10 +27,10 @@ export const Default: Story = {
     const box = canvasElement.firstElementChild;
     if (!(box instanceof HTMLElement)) throw new Error('Box did not render');
     const style = getComputedStyle(box);
-    await expect(style.paddingBlockStart).toBe(tokenPx('--fossil-space-l'));
-    await expect(style.paddingInlineEnd).toBe(tokenPx('--fossil-space-l'));
+    await expect(style.paddingBlockStart).toBe(tokenPx('--dino-space-l'));
+    await expect(style.paddingInlineEnd).toBe(tokenPx('--dino-space-l'));
     await expect(style.borderTopLeftRadius).toBe(
-      tokenPx('--fossil-radius-surface'),
+      tokenPx('--dino-radius-surface'),
     );
   },
 };
@@ -41,8 +41,8 @@ export const LonghandOverShorthand: Story = {
     const box = canvasElement.firstElementChild;
     if (!(box instanceof HTMLElement)) throw new Error('Box did not render');
     const style = getComputedStyle(box);
-    await expect(style.paddingBlockStart).toBe(tokenPx('--fossil-space-l'));
-    await expect(style.paddingInlineStart).toBe(tokenPx('--fossil-space-xs'));
+    await expect(style.paddingBlockStart).toBe(tokenPx('--dino-space-l'));
+    await expect(style.paddingInlineStart).toBe(tokenPx('--dino-space-xs'));
   },
 };
 
@@ -63,7 +63,7 @@ export const Element: Story = {
     await expect(list?.children).toHaveLength(3);
     if (!(list instanceof HTMLElement)) throw new Error('Box did not render');
     await expect(getComputedStyle(list).columnGap).toBe(
-      tokenPx('--fossil-space-m'),
+      tokenPx('--dino-space-m'),
     );
   },
 };

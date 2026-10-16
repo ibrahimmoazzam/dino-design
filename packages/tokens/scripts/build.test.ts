@@ -158,7 +158,7 @@ describe('building the token source', () => {
     }
     const border = tokens.find((t) => t.path === 'border.default')?.value as
       Record<string, unknown> | undefined;
-    expect(declaration(css, '--fossil-border-default')).toBe(
+    expect(declaration(css, '--dino-border-default')).toBe(
       ['width', 'style', 'color']
         .map((part) => `var(${name(referenceOf(border?.[part]) ?? part)})`)
         .join(' '),
@@ -166,20 +166,20 @@ describe('building the token source', () => {
   });
 
   it('splits each text style into five aliased properties, with no font shorthand', () => {
-    expect(declaration(css, '--fossil-text-heading-xs-font-family')).toBe(
-      'var(--fossil-font-family-heading)',
+    expect(declaration(css, '--dino-text-heading-xs-font-family')).toBe(
+      'var(--dino-font-family-heading)',
     );
-    expect(declaration(css, '--fossil-text-label-letter-spacing')).toBe(
-      'var(--fossil-base-letter-spacing-wide)',
+    expect(declaration(css, '--dino-text-label-letter-spacing')).toBe(
+      'var(--dino-base-letter-spacing-wide)',
     );
     expect(json.tokens['text.body']?.cssVar).toEqual({
-      fontFamily: '--fossil-text-body-font-family',
-      fontSize: '--fossil-text-body-font-size',
-      fontWeight: '--fossil-text-body-font-weight',
-      letterSpacing: '--fossil-text-body-letter-spacing',
-      lineHeight: '--fossil-text-body-line-height',
+      fontFamily: '--dino-text-body-font-family',
+      fontSize: '--dino-text-body-font-size',
+      fontWeight: '--dino-text-body-font-weight',
+      letterSpacing: '--dino-text-body-letter-spacing',
+      lineHeight: '--dino-text-body-line-height',
     });
-    expect(css).not.toMatch(/--fossil-text-body:/);
+    expect(css).not.toMatch(/--dino-text-body:/);
   });
 
   it('writes the dark values as aliases, in two identical blocks', () => {
@@ -244,7 +244,7 @@ describe('building the token source', () => {
   });
 
   it('writes durations in CSS units and nothing unconverted', () => {
-    expect(declaration(css, '--fossil-base-duration-150')).toBe('150ms');
+    expect(declaration(css, '--dino-base-duration-150')).toBe('150ms');
     expect(css).not.toMatch(/\[object Object\]|\bundefined\b|\bNaN\b/);
   });
 
@@ -261,7 +261,7 @@ describe('building the token source', () => {
     expect(json.tokens['color.text.muted']).toEqual({
       tier: 'semantic',
       type: 'color',
-      cssVar: '--fossil-color-text-muted',
+      cssVar: '--dino-color-text-muted',
       value: byPath.get(light)?.value,
       aliasOf: light,
       ...(dark !== undefined && {
@@ -279,8 +279,8 @@ describe('building the token source', () => {
 
   it('lists every primitive custom property for the lint config', () => {
     const lint = JSON.parse(read('dist/lint.json')) as LintLists;
-    expect(lint.primitive).toContain('--fossil-base-color-gray-600');
-    expect(lint.primitive).not.toContain('--fossil-color-text-muted');
+    expect(lint.primitive).toContain('--dino-base-color-gray-600');
+    expect(lint.primitive).not.toContain('--dino-color-text-muted');
     expect(lint.primitive).toHaveLength(
       Object.values(json.tokens).filter((t) => t.tier === 'primitive').length,
     );
@@ -308,11 +308,11 @@ describe('building the token source', () => {
   it('writes the foundations into AGENTS.md', () => {
     expect(agents.startsWith(`# Agents\n\n${BLOCK_START}`)).toBe(true);
     expect(agents).toContain('For padding and `gap`. Never margin.');
-    expect(agents).toContain('| `space.m` | `--fossil-space-m` | 16px |');
+    expect(agents).toContain('| `space.m` | `--dino-space-m` | 16px |');
     expect(agents).toContain(
       '| `text.heading.s` | heading | 22px | 700 | 1.4 | 0 | Card and modal titles. |',
     );
-    expect(agents).toContain('| `--fossil-color-text-muted` | Secondary text.');
+    expect(agents).toContain('| `--dino-color-text-muted` | Secondary text.');
   });
 
   it('writes the same foundations to foundations.md, a heading level up', () => {
@@ -334,17 +334,17 @@ describe('building the token source', () => {
   it('writes the foundations in brief, with every semantic token in use', () => {
     const brief = read('dist/foundations-brief.md');
     expect(brief).toContain(
-      '- **Spacing**, `--fossil-space-…`, for padding and `gap`: `2xs` 4px,',
+      '- **Spacing**, `--dino-space-…`, for padding and `gap`: `2xs` 4px,',
     );
     expect(brief).toContain('`tablet` 768px, `compact` 1024px');
     expect(brief).toContain(
-      '`text.body` is `--fossil-text-body-font-family`, `-font-size`, `-font-weight`, `-letter-spacing` and `-line-height`.',
+      '`text.body` is `--dino-text-body-font-family`, `-font-size`, `-font-weight`, `-letter-spacing` and `-line-height`.',
     );
     expect(brief).toContain(
       '  - `heading.s` (heading, 22px, 700): Card and modal titles.',
     );
     expect(brief).toContain('  - `text-muted`: Secondary text.');
-    expect(brief).toContain('`--fossil-radius-{compact,control,surface,pill}`');
+    expect(brief).toContain('`--dino-radius-{compact,control,surface,pill}`');
     // Each name appears whole, or as its stem and the rest.
     const expanded = brief.replaceAll(
       /`(--[\w-]+-)\{([^}]+)\}`/g,
@@ -362,7 +362,7 @@ describe('building the token source', () => {
           (path.startsWith('space.') && expanded.includes(`\`${last}\` `)) ||
           (path.startsWith('color.') &&
             expanded.includes(
-              `\`${name(path).replace('--fossil-color-', '')}\`:`,
+              `\`${name(path).replace('--dino-color-', '')}\`:`,
             )) ||
           (path.startsWith('text.') &&
             expanded.includes(`\`${path.slice('text.'.length)}\` (`));
@@ -376,17 +376,17 @@ describe('building the token source', () => {
       reference.indexOf('\n## space\n'),
     );
     expect(reference).toContain(
-      '| `color.text.muted` | `--fossil-color-text-muted` | #4a5159 | #cdd2d8 | Secondary text. |',
+      '| `color.text.muted` | `--dino-color-text-muted` | #4a5159 | #cdd2d8 | Secondary text. |',
     );
     expect(reference).toContain(
-      '| `space.m` | `--fossil-space-m` | 1rem (16px) | Padding and gap: 16px. |',
+      '| `space.m` | `--dino-space-m` | 1rem (16px) | Padding and gap: 16px. |',
     );
     expect(reference).toContain('| Token | Custom property | Value | Use |');
     expect(reference).toContain(
-      '| `color.background.veil` | `--fossil-color-background-veil` | #000000 at 60% |',
+      '| `color.background.veil` | `--dino-color-background-veil` | #000000 at 60% |',
     );
     expect(reference).toContain(
-      '| `motion.duration.base` | `--fossil-motion-duration-base` | `--fossil-motion-duration-default` |',
+      '| `motion.duration.base` | `--dino-motion-duration-base` | `--dino-motion-duration-default` |',
     );
     for (const [path, token] of Object.entries(json.tokens))
       if (token.tier === 'semantic' && token.deprecated === undefined)
@@ -437,7 +437,7 @@ describe('a broken token fails the build with a clear message, before anything i
       }),
     );
     expect(problems).toEqual([
-      'color.text.muted and color.text-muted both become --fossil-color-text-muted. Rename one of them.',
+      'color.text.muted and color.text-muted both become --dino-color-text-muted. Rename one of them.',
     ]);
     expect(wrote).toBe(false);
   });
@@ -457,7 +457,7 @@ describe('a broken token fails the build with a clear message, before anything i
       { transforms: TRANSFORMS.filter((t) => t !== DURATION) },
     );
     expect(problems).toEqual([
-      'base.duration.150: --fossil-base-duration-150 would be "[object Object]". No transform turns this duration value into CSS.',
+      'base.duration.150: --dino-base-duration-150 would be "[object Object]". No transform turns this duration value into CSS.',
     ]);
     expect(wrote).toBe(false);
   });
@@ -516,9 +516,9 @@ describe('references', () => {
         },
       }),
     );
-    expect(declaration(read('dist/tokens.css'), '--fossil-shadow-deep')).toBe(
-      'var(--fossil-base-space-0) var(--fossil-base-space-050) var(--fossil-base-space-1000) var(--fossil-base-space-0) var(--fossil-base-color-ink), ' +
-        'inset var(--fossil-base-space-0) var(--fossil-base-space-0) var(--fossil-base-space-100) var(--fossil-base-space-0) var(--fossil-base-color-ink)',
+    expect(declaration(read('dist/tokens.css'), '--dino-shadow-deep')).toBe(
+      'var(--dino-base-space-0) var(--dino-base-space-050) var(--dino-base-space-1000) var(--dino-base-space-0) var(--dino-base-color-ink), ' +
+        'inset var(--dino-base-space-0) var(--dino-base-space-0) var(--dino-base-space-100) var(--dino-base-space-0) var(--dino-base-color-ink)',
     );
   });
 
@@ -555,11 +555,11 @@ describe('references', () => {
       }),
     );
     const css = read('dist/tokens.css');
-    expect(declaration(css, '--fossil-text-body-font-size')).toBe(
-      'var(--fossil-base-font-size-5)',
+    expect(declaration(css, '--dino-text-body-font-size')).toBe(
+      'var(--dino-base-font-size-5)',
     );
-    expect(declaration(css, '--fossil-text-default-font-size')).toBe(
-      'var(--fossil-text-body-font-size)',
+    expect(declaration(css, '--dino-text-default-font-size')).toBe(
+      'var(--dino-text-body-font-size)',
     );
   });
 
@@ -574,7 +574,7 @@ describe('references', () => {
       }),
     );
     expect(
-      declaration(read('dist/tokens.css'), '--fossil-base-weight-semi'),
+      declaration(read('dist/tokens.css'), '--dino-base-weight-semi'),
     ).toBe('600');
   });
 });
@@ -606,13 +606,13 @@ describe('deprecated tokens', () => {
   it('keeps them in tokens.css and lists them for the lint config, but not as prop keys', async () => {
     const read = await buildInto(deprecated);
     expect(read('dist/tokens.css')).toContain(
-      '  /* The old body text. Deprecated: Renamed to color.text.default. */\n  --fossil-color-text-old: var(--fossil-base-color-gray-600);',
+      '  /* The old body text. Deprecated: Renamed to color.text.default. */\n  --dino-color-text-old: var(--dino-base-color-gray-600);',
     );
     expect(
       (JSON.parse(read('dist/lint.json')) as LintLists).deprecated,
     ).toEqual({
-      '--fossil-color-text-old': {
-        replacedBy: '--fossil-color-text-default',
+      '--dino-color-text-old': {
+        replacedBy: '--dino-color-text-default',
         reason: 'Renamed to color.text.default.',
       },
     });

@@ -1,1 +1,1 @@
-export { default } from '@fossil-design/stylelint-config';
+export { default } from '@dino-labs/stylelint-config';

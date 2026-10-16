@@ -121,12 +121,12 @@ const pipelines: Pipeline[] = [
         tools: [npm, { icon: StylelintIcon, label: 'Stylelint' }],
         items: [
           {
-            name: '@fossil-design/tokens',
+            name: '@dino-labs/tokens',
             code: true,
             body: 'CSS, JSON and TypeScript.',
           },
           {
-            name: '@fossil-design/stylelint-config',
+            name: '@dino-labs/stylelint-config',
             code: true,
             body: 'Semantic tokens only.',
           },
@@ -166,12 +166,12 @@ const pipelines: Pipeline[] = [
         tools: [npm, { icon: ESLintIcon, label: 'ESLint' }],
         items: [
           {
-            name: '@fossil-design/react',
+            name: '@dino-labs/react',
             code: true,
             body: 'Components, docs for agents and the Make guidelines.',
           },
           {
-            name: '@fossil-design/eslint-config',
+            name: '@dino-labs/eslint-config',
             code: true,
             body: 'Layout through `Box`, and a reason on every disable.',
           },
@@ -231,7 +231,7 @@ const consumers: {
     name: 'Coding agents',
     from: 'Tokens and Components',
     tools: agents,
-    body: 'Build with `@fossil-design/react` and the tokens, guided by `AGENTS.md` and the bundled docs. Types and lint reject drift.',
+    body: 'Build with `@dino-labs/react` and the tokens, guided by `AGENTS.md` and the bundled docs. Types and lint reject drift.',
   },
   {
     name: 'Designers',
@@ -265,7 +265,7 @@ const layers = [
     points: [
       {
         lead: 'An `AGENTS.md` block.',
-        body: '`npx fossil-agents-md` writes the rules, the token scales and the component list into your app’s `AGENTS.md`, which coding agents read on every task.',
+        body: '`npx dino-agents-md` writes the rules, the token scales and the component list into your app’s `AGENTS.md`, which coding agents read on every task.',
       },
       {
         lead: 'Docs in the package.',

@@ -61,13 +61,13 @@ export const Sizes: Story = {
     const [s, m, l] = canvasElement.querySelectorAll('svg');
     if (!s || !m || !l) throw new Error('Icons did not render');
     await expect(getComputedStyle(s).inlineSize).toBe(
-      tokenPx('--fossil-icon-size-s'),
+      tokenPx('--dino-icon-size-s'),
     );
     await expect(getComputedStyle(m).inlineSize).toBe(
-      tokenPx('--fossil-icon-size-m'),
+      tokenPx('--dino-icon-size-m'),
     );
     await expect(getComputedStyle(l).inlineSize).toBe(
-      tokenPx('--fossil-icon-size-l'),
+      tokenPx('--dino-icon-size-l'),
     );
   },
 };

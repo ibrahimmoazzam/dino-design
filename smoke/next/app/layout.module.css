@@ -1,10 +1,10 @@
 .body {
   margin: 0;
-  background-color: var(--fossil-color-background-page);
-  color: var(--fossil-color-text-default);
-  font-family: var(--fossil-text-body-font-family);
-  font-size: var(--fossil-text-body-font-size);
-  font-weight: var(--fossil-text-body-font-weight);
-  letter-spacing: var(--fossil-text-body-letter-spacing);
-  line-height: var(--fossil-text-body-line-height);
+  background-color: var(--dino-color-background-page);
+  color: var(--dino-color-text-default);
+  font-family: var(--dino-text-body-font-family);
+  font-size: var(--dino-text-body-font-size);
+  font-weight: var(--dino-text-body-font-weight);
+  letter-spacing: var(--dino-text-body-letter-spacing);
+  line-height: var(--dino-text-body-line-height);
 }

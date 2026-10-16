@@ -116,7 +116,7 @@ describe('reading examples from stories', () => {
   const inputs: Inputs = {
     root: '',
     exports: { Thing: {}, Text: {}, Stack: {} },
-    packageName: '@fossil-design/react',
+    packageName: '@dino-labs/react',
   };
   const props: Prop[] = [
     { name: 'tone', type: '"a" | "b"', required: false, description: 'Tone.' },
@@ -151,7 +151,7 @@ export const Default: Story = { tags: ['example'], args: { tone: 'b', children: 
     expect(example).toEqual({
       name: 'Default',
       description: 'The usual case.',
-      code: `import { Thing } from '@fossil-design/react';\n\n<Thing label="Close" tone="b">Hello</Thing>`,
+      code: `import { Thing } from '@dino-labs/react';\n\n<Thing label="Close" tone="b">Hello</Thing>`,
       placeholders: [],
     });
   });
@@ -173,7 +173,7 @@ export const Stateful: Story = {
   },
 };`);
     expect(example?.code).toBe(`import { useState } from 'react';
-import { Stack, Thing } from '@fossil-design/react';
+import { Stack, Thing } from '@dino-labs/react';
 
 function Stateful() {
   const [on, setOn] = useState(false);
@@ -211,7 +211,7 @@ export const Args: Story = { tags: ['example'], render: (args) => <Thing {...arg
 export const Spy: Story = { tags: ['example'], args: { label: fn() } };
 export const Undescribed: Story = { tags: ['example'] };`);
     expect(problems).toEqual([
-      "the example story Helper uses `helper`, which an app doesn't have. Use @fossil-design/react's and React's exports, or a module-level constant with a JSDoc comment saying what the app puts there",
+      "the example story Helper uses `helper`, which an app doesn't have. Use @dino-labs/react's and React's exports, or a module-level constant with a JSDoc comment saying what the app puts there",
       'the example story Args: its render takes args. Write it as an app would, with no args, or drop render and let the args make the example',
       'the example story Spy: its args leave out `label`, which is required. Give the story a render that shows how an app supplies it',
       'the example story Undescribed needs a JSDoc comment saying why an app would do this',
@@ -236,9 +236,9 @@ describe('the docs placeholders', () => {
 
 describe('the AGENTS.md block', () => {
   it('names its markers after the npm scope', () => {
-    expect(blockMarkers('@fossil-design')).toEqual({
-      start: '<!-- BEGIN:fossil-design-agent-rules -->',
-      end: '<!-- END:fossil-design-agent-rules -->',
+    expect(blockMarkers('@dino-labs')).toEqual({
+      start: '<!-- BEGIN:dino-labs-agent-rules -->',
+      end: '<!-- END:dino-labs-agent-rules -->',
     });
   });
 
@@ -300,7 +300,7 @@ describe("the package's docs", () => {
     const inputs: Inputs = {
       root: fileURLToPath(new URL('..', import.meta.url)),
       exports: system,
-      packageName: '@fossil-design/react',
+      packageName: '@dino-labs/react',
     };
     const { components, problems } = collect(inputs);
     expect(problems).toEqual([]);

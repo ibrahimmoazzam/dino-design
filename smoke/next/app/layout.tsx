@@ -1,4 +1,4 @@
-import '@fossil-design/react/style.css';
+import '@dino-labs/react/style.css';
 import type { ReactNode } from 'react';
 import styles from './layout.module.css';
 

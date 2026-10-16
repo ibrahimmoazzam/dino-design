@@ -1,6 +1,6 @@
 # Fossil Design
 
-[![CI](https://github.com/ibrahimmoazzam/fossil-design/actions/workflows/ci.yml/badge.svg)](https://github.com/ibrahimmoazzam/fossil-design/actions/workflows/ci.yml) [![npm](https://img.shields.io/npm/v/@fossil-design/react?label=%40fossil-design%2Freact)](https://www.npmjs.com/package/@fossil-design/react) [![License: MIT](https://img.shields.io/badge/license-MIT-blue)](./LICENSE)
+[![CI](https://github.com/ibrahimmoazzam/dino-design/actions/workflows/ci.yml/badge.svg)](https://github.com/ibrahimmoazzam/dino-design/actions/workflows/ci.yml) [![npm](https://img.shields.io/npm/v/@dino-labs/react?label=%40dino-labs%2Freact)](https://www.npmjs.com/package/@dino-labs/react) [![License: MIT](https://img.shields.io/badge/license-MIT-blue)](./LICENSE)
 
 An open-source agentic design system: built agent-first, so the design agents and coding agents a team builds with stay on-system from design to code. Tokens live in git and flow into CSS, typed React components, Figma variables and a Figma component library generated from code. Shared lint configs, docs bundled into the packages and guidelines for Figma Make keep what coding agents and Make generate on-system: the consistency a design system promises, without the dedicated platform team it usually takes.
 
@@ -47,13 +47,13 @@ Everything runs on a Figma Professional or Education plan and free tiers elsewhe
 
 ## Packages
 
-| Package                                                          | What it is                                                                  | Version                                                                                                                               |
-| ---------------------------------------------------------------- | --------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
-| [`@fossil-design/tokens`](./packages/tokens)                     | DTCG token source and the build that turns it into CSS, JSON and TypeScript | [![npm](https://img.shields.io/npm/v/@fossil-design/tokens)](https://www.npmjs.com/package/@fossil-design/tokens)                     |
-| [`@fossil-design/react`](./packages/react)                       | React components, precompiled to JavaScript and one stylesheet              | [![npm](https://img.shields.io/npm/v/@fossil-design/react)](https://www.npmjs.com/package/@fossil-design/react)                       |
-| [`@fossil-design/eslint-config`](./packages/eslint-config)       | Keeps JSX on-system                                                         | [![npm](https://img.shields.io/npm/v/@fossil-design/eslint-config)](https://www.npmjs.com/package/@fossil-design/eslint-config)       |
-| [`@fossil-design/stylelint-config`](./packages/stylelint-config) | Keeps CSS on-system                                                         | [![npm](https://img.shields.io/npm/v/@fossil-design/stylelint-config)](https://www.npmjs.com/package/@fossil-design/stylelint-config) |
-| [`@fossil-design/figma-sync`](./packages/figma-sync)             | Syncs tokens with Figma; runs from the repo, not published                  | Private                                                                                                                               |
+| Package                                                      | What it is                                                                  | Version                                                                                                                       |
+| ------------------------------------------------------------ | --------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| [`@dino-labs/tokens`](./packages/tokens)                     | DTCG token source and the build that turns it into CSS, JSON and TypeScript | [![npm](https://img.shields.io/npm/v/@dino-labs/tokens)](https://www.npmjs.com/package/@dino-labs/tokens)                     |
+| [`@dino-labs/react`](./packages/react)                       | React components, precompiled to JavaScript and one stylesheet              | [![npm](https://img.shields.io/npm/v/@dino-labs/react)](https://www.npmjs.com/package/@dino-labs/react)                       |
+| [`@dino-labs/eslint-config`](./packages/eslint-config)       | Keeps JSX on-system                                                         | [![npm](https://img.shields.io/npm/v/@dino-labs/eslint-config)](https://www.npmjs.com/package/@dino-labs/eslint-config)       |
+| [`@dino-labs/stylelint-config`](./packages/stylelint-config) | Keeps CSS on-system                                                         | [![npm](https://img.shields.io/npm/v/@dino-labs/stylelint-config)](https://www.npmjs.com/package/@dino-labs/stylelint-config) |
+| [`@dino-labs/figma-sync`](./packages/figma-sync)             | Syncs tokens with Figma; runs from the repo, not published                  | Private                                                                                                                       |
 
 ## Make it your own
 

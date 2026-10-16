@@ -1,5 +1,5 @@
 {
-  "name": "@fossil-design/figma-sync",
+  "name": "@dino-labs/figma-sync",
   "version": "0.0.0",
   "private": true,
   "description": "Syncs Fossil Design tokens with Figma variables, through an agent and the Figma MCP server. Runs from the repository and is not published.",

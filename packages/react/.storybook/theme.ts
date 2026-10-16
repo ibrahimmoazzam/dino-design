@@ -1,4 +1,4 @@
-import tokensFile from '@fossil-design/tokens/tokens.json';
+import tokensFile from '@dino-labs/tokens/tokens.json';
 import config from '../../../brand.config.json' with { type: 'json' };
 import { create, type ThemeVars } from 'storybook/theming';
 import { githubMark, repo, version } from '../docs-site/repo.ts';
@@ -117,15 +117,15 @@ export function frameProperties(mode: Mode): Record<string, string> {
       ? label.letterSpacing.value * 16
       : label.letterSpacing.value;
   return {
-    '--fossil-color-highlight-default': color('color.highlight.default', mode),
-    '--fossil-color-text-on-highlight': color('color.text.on-highlight', mode),
-    '--fossil-color-border-strong': color('color.border.strong', mode),
-    '--fossil-text-label-font-family': label.fontFamily
+    '--dino-color-highlight-default': color('color.highlight.default', mode),
+    '--dino-color-text-on-highlight': color('color.text.on-highlight', mode),
+    '--dino-color-border-strong': color('color.border.strong', mode),
+    '--dino-text-label-font-family': label.fontFamily
       .map((f) => (f.includes(' ') ? `'${f}'` : f))
       .join(', '),
-    '--fossil-text-label-font-size': fontSize('text.label'),
-    '--fossil-text-label-font-weight': String(label.fontWeight),
-    '--fossil-text-label-letter-spacing': `${String(tracking)}px`,
+    '--dino-text-label-font-size': fontSize('text.label'),
+    '--dino-text-label-font-weight': String(label.fontWeight),
+    '--dino-text-label-letter-spacing': `${String(tracking)}px`,
   };
 }
 

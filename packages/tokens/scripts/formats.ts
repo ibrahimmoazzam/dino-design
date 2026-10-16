@@ -30,7 +30,7 @@ export class BuildError extends Error {
 export interface Property {
   /** The composite part it holds, when the build splits a typography token. */
   part: string | undefined;
-  /** Style Dictionary's name for it, such as `--fossil-color-text-muted`. */
+  /** Style Dictionary's name for it, such as `--dino-color-text-muted`. */
   name: string;
   /** Style Dictionary's CSS value, with every reference resolved. */
   literal: string;
@@ -575,7 +575,7 @@ export function foundationsMarkdown(
   return `${[`<!-- ${header} -->`, '', lead(prefix), '', ...foundationTables(file, 2)].join('\n')}\n`;
 }
 
-/** What a set of custom properties share, up to a hyphen: `--fossil-radius-`. */
+/** What a set of custom properties share, up to a hyphen: `--dino-radius-`. */
 function stemOf(vars: readonly string[]): string {
   const shared = vars.reduce((a, b) => {
     let i = 0;
@@ -585,7 +585,7 @@ function stemOf(vars: readonly string[]): string {
   return shared.slice(0, shared.lastIndexOf('-') + 1);
 }
 
-/** Custom properties that share a stem, as `--fossil-radius-{control,surface}`. */
+/** Custom properties that share a stem, as `--dino-radius-{control,surface}`. */
 function braces(vars: readonly string[]): string {
   if (vars.length < 2) return vars.map(code).join('');
   const stem = stemOf(vars);

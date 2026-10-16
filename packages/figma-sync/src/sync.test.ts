@@ -52,7 +52,7 @@ const namesOf = (model: readonly FigmaToken[]): TokensFile => ({
       {
         tier: t.collection,
         type: '',
-        cssVar: `--fossil-${t.path.replaceAll('.', '-')}`,
+        cssVar: `--dino-${t.path.replaceAll('.', '-')}`,
         value: null,
       },
     ]),
@@ -268,7 +268,7 @@ describe('applying to a fresh file', () => {
     expect(figma.all).toHaveLength(model.length);
     const muted = figma.variable('color.text.muted');
     expect(muted.name).toBe('color/text/muted');
-    expect(muted.codeSyntax).toEqual({ WEB: 'var(--fossil-color-text-muted)' });
+    expect(muted.codeSyntax).toEqual({ WEB: 'var(--dino-color-text-muted)' });
     expect(muted.description).toBe(
       'Secondary text. 7.38:1 on the page in light, 12.70:1 in dark.',
     );
@@ -489,7 +489,7 @@ describe('a rename in code', () => {
     const subtle = figma.variable('color.text.subtle');
     expect(subtle.id).toBe(id);
     expect(subtle.name).toBe('color/text/subtle');
-    expect(subtle.codeSyntax.WEB).toBe('var(--fossil-color-text-subtle)');
+    expect(subtle.codeSyntax.WEB).toBe('var(--dino-color-text-subtle)');
   });
 });
 

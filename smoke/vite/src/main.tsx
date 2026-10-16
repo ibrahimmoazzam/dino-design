@@ -1,4 +1,4 @@
-import '@fossil-design/react/style.css';
+import '@dino-labs/react/style.css';
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { App } from './App';
