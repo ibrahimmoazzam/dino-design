@@ -22,7 +22,7 @@ export type ButtonProps = NativeButtonProps & {
   tone?: ButtonTone;
   /** Defaults to `m`, 44px tall. */
   size?: ButtonSize;
-  /** Classes from the app's own stylesheet, added to Fossil's. */
+  /** Classes from the app's own stylesheet, added to Dino Design's. */
   className?: string;
 } & (
     | {

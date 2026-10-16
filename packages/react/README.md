@@ -1,6 +1,6 @@
 # @dino-labs/react
 
-React components for [Fossil Design](https://github.com/ibrahimmoazzam/dino-design), an open-source agentic design system. Their props take token keys and variant names, never raw values, so code written with them stays on-system.
+React components for [Dino Design](https://github.com/ibrahimmoazzam/dino-design), an open-source agentic design system. Their props take token keys and variant names, never raw values, so code written with them stays on-system.
 
 > **Early release.** Versions `0.x` may change component APIs between minor versions while the library is built out. The release notes list each change.
 
@@ -51,7 +51,7 @@ export function Note() {
 | `Link`           | A link with a dotted underline that fills in on hover and focus. A new tab gets an outward arrow and says so to screen readers. `asChild` styles a router's link, or a button for an action that reads like a link                                                                                                                                                   |
 | `Card`           | A bordered surface for one of a set of parallel pieces of content, with an optional title at a heading level you choose                                                                                                                                                                                                                                              |
 | `Figure`         | Frames your image or video, and ties an optional caption to it                                                                                                                                                                                                                                                                                                       |
-| `Icon`           | An icon, decorative unless it has a `label`. Takes one of Fossil's icons, such as `CloseIcon`, or any SVG component of your own                                                                                                                                                                                                                                      |
+| `Icon`           | An icon, decorative unless it has a `label`. Takes one of Dino Design's icons, such as `CloseIcon`, or any SVG component of your own                                                                                                                                                                                                                                 |
 | `SkipLink`       | Lets keyboard users jump past the navigation; hidden until focused                                                                                                                                                                                                                                                                                                   |
 | `VisuallyHidden` | Text for assistive technology only                                                                                                                                                                                                                                                                                                                                   |
 | `Modal`          | A modal dialog on native `<dialog>`: focus on the title, Escape and a click outside close it, and the page behind stays still. `renderPanel` lets an animation library run the panel                                                                                                                                                                                 |
@@ -73,7 +73,7 @@ Point your agent at them with the package's bin, from your app's root:
 npx dino-agents-md
 ```
 
-It writes Fossil's rules, the token scales, the components and the paths to their docs into your `AGENTS.md`, between `<!-- BEGIN:dino-labs-agent-rules -->` and `<!-- END:dino-labs-agent-rules -->`, and adds `@AGENTS.md` to your `CLAUDE.md` if you have one. Run it again after upgrading; it replaces only the block. `npx dino-agents-md --check` changes nothing, and fails when the block is out of date, for CI.
+It writes Dino Design's rules, the token scales, the components and the paths to their docs into your `AGENTS.md`, between `<!-- BEGIN:dino-labs-agent-rules -->` and `<!-- END:dino-labs-agent-rules -->`, and adds `@AGENTS.md` to your `CLAUDE.md` if you have one. Run it again after upgrading; it replaces only the block. `npx dino-agents-md --check` changes nothing, and fails when the block is out of date, for CI.
 
 ## Figma Make
 
@@ -87,7 +87,7 @@ The package's own guidelines set up the stylesheet and the fonts, tell Make to s
 
 ## Icons
 
-Fossil ships the [Material Symbols](https://fonts.google.com/icons) its components use, as React components: `ArrowOutwardIcon`, `ChevronLeftIcon`, `ChevronRightIcon`, `CloseIcon`, `PauseIcon` and `PlayArrowIcon`. They are © Google, under the Apache License 2.0, included as `dist/licenses/material-symbols.txt`. For any other icon, pass your own SVG component to `Icon`.
+Dino Design ships the [Material Symbols](https://fonts.google.com/icons) its components use, as React components: `ArrowOutwardIcon`, `ChevronLeftIcon`, `ChevronRightIcon`, `CloseIcon`, `PauseIcon` and `PlayArrowIcon`. They are © Google, under the Apache License 2.0, included as `dist/licenses/material-symbols.txt`. For any other icon, pass your own SVG component to `Icon`.
 
 ## License
 

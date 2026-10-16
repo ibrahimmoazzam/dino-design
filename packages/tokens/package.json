@@ -1,7 +1,7 @@
 {
   "name": "@dino-labs/tokens",
   "version": "0.6.2",
-  "description": "Design tokens for Fossil Design: DTCG source files and the Style Dictionary build that turns them into CSS, JSON and TypeScript.",
+  "description": "Design tokens for Dino Design: DTCG source files and the Style Dictionary build that turns them into CSS, JSON and TypeScript.",
   "keywords": [
     "design-system",
     "design-tokens",

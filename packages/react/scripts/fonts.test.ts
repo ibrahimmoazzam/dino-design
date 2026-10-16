@@ -67,7 +67,7 @@ describe('the faces the text styles use', () => {
     ).toEqual([]);
   });
 
-  it("covers Fossil's own stylesheets, as the build checks them", () => {
+  it("covers Dino Design's own stylesheets, as the build checks them", () => {
     expect(requiredFonts(tokens).size).toBeGreaterThan(0);
   });
 });

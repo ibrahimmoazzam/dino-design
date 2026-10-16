@@ -17,7 +17,7 @@ import {
 
 export type PropertyType = 'TEXT' | 'BOOLEAN' | 'INSTANCE_SWAP' | 'SLOT';
 
-/** Text set in a Fossil text style, or with each part bound on its own. Values are token paths. */
+/** Text set in a Dino Design text style, or with each part bound on its own. Values are token paths. */
 export interface Typography {
   style?: string;
   fontFamily?: string;
@@ -352,7 +352,7 @@ export function svgOf(icon: IconSpec): string {
 }
 
 /**
- * Creates or updates Fossil's text styles, effect styles and icon glyphs, in the foundations file.
+ * Creates or updates Dino Design's text styles, effect styles and icon glyphs, in the foundations file.
  * Running it again changes nothing. It returns their keys, which the components file imports them by.
  */
 export async function styles(
@@ -930,7 +930,7 @@ export async function checkVariant(
 }
 
 /**
- * Checks Fossil's Figma library against the spec, and reports every difference: in the
+ * Checks Dino Design's Figma library against the spec, and reports every difference: in the
  * foundations file, its styles and icons; in the components file, its components.
  */
 export async function check(

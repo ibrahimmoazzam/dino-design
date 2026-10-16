@@ -594,7 +594,7 @@ function SectionCard({ page, title, icon, body }: SectionCardProps) {
   );
 }
 
-/** The site's front page, built from Fossil's own components. */
+/** The site's front page, built from Dino Design's own components. */
 export function Landing() {
   return (
     <Stack gap="2xl">
@@ -603,11 +603,11 @@ export function Landing() {
           Open-source agentic design system
         </Text>
         <Text as="h1" variant="heading-xl">
-          Fossil Design
+          Dino Design
         </Text>
         <RepoChip />
         <Text variant="prose" tone="muted">
-          Fossil Design is an{' '}
+          Dino Design is an{' '}
           <strong className={styles.pop}>agentic design system</strong>: built
           agent-first, so the design agents and coding agents a team builds with
           stay on-system from design to code. Its tokens live in git and flow
@@ -657,7 +657,7 @@ export function Landing() {
             ))}
           </Box>
           <Text variant="prose">
-            Fossil answers the first with context and the second with
+            Dino Design answers the first with context and the second with
             constraint. Then it verifies both, so the system itself stays true
             in code and in Figma.
           </Text>
@@ -684,7 +684,7 @@ export function Landing() {
           >
             <Stack gap="m">
               <Text variant="prose">
-                So Fossil itself stays on-system, in code and in Figma.
+                So Dino Design itself stays on-system, in code and in Figma.
               </Text>
               <Points points={checks} />
             </Stack>

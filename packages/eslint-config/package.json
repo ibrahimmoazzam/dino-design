@@ -1,7 +1,7 @@
 {
   "name": "@dino-labs/eslint-config",
   "version": "0.2.0",
-  "description": "Shared ESLint config for Fossil Design: layout goes through Box, and every disable says why.",
+  "description": "Shared ESLint config for Dino Design: layout goes through Box, and every disable says why.",
   "keywords": [
     "design-system",
     "eslint",

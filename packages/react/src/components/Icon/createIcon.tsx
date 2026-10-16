@@ -1,6 +1,6 @@
 import type { ComponentType, SVGProps } from 'react';
 
-/** An SVG as a component: one of Fossil's icons, or an app's own, such as one from SVGR. */
+/** An SVG as a component: one of Dino Design's icons, or an app's own, such as one from SVGR. */
 export type IconComponent = ComponentType<SVGProps<SVGSVGElement>>;
 
 /** Wraps an icon's paths in an `<svg>` that sizes to the text and takes its colour. */

@@ -19,7 +19,7 @@ addons.setConfig({ theme: siteTheme(resolveMode('system')) });
 setFrameProperties(resolveMode('system'));
 
 // Storybook names itself in every tab title, with no option to change it. The site follows
-// ibrahimmoazzam.com instead: "Page | Fossil Design", and the front page says what Fossil is.
+// ibrahimmoazzam.com instead: "Page | Dino Design", and the front page says what Dino Design is.
 // A fork's pages take its name from brand.config.json; the front page's title is siteTitle,
 // which scripts/site-meta.ts also writes into the built page, for the scrapers that read it.
 function tabTitle(title: string): string {

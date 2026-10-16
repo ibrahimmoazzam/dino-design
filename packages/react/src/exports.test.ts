@@ -1,6 +1,6 @@
 import { readdirSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
-import * as fossil from './index.ts';
+import * as dino from './index.ts';
 
 /** Folders that hold shared internals rather than a component. */
 const internal = new Set(['Floating']);
@@ -13,6 +13,6 @@ const components = readdirSync(new URL('./components/', import.meta.url), {
 
 describe('the package entry', () => {
   it.each(components)('exports %s', (name) => {
-    expect(fossil).toHaveProperty(name);
+    expect(dino).toHaveProperty(name);
   });
 });

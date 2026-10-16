@@ -2,7 +2,7 @@
 
 Use {{name}}'s components in a React app, keep the app on-system with the lint configs, and give your coding agent the docs for the version you installed. Each package's page on npm has the details.
 
-<Callout tone="info">To make a design system of your own from this one, with your brand and your own Figma files, follow [the adoption guide](?path=/docs/adopt-fossil-for-your-brand--docs) instead.</Callout>
+<Callout tone="info">To make a design system of your own from this one, with your brand and your own Figma files, follow [the adoption guide](?path=/docs/adopt-dino-design-for-your-brand--docs) instead.</Callout>
 
 ## 1. Install the components
 
@@ -56,11 +56,11 @@ npm install --save-dev {{scope}}/eslint-config eslint {{scope}}/stylelint-config
 
 ```js
 // eslint.config.js
-import fossil from '{{scope}}/eslint-config';
+import dino from '{{scope}}/eslint-config';
 import { defineConfig } from 'eslint/config';
 import tseslint from 'typescript-eslint';
 
-export default defineConfig(tseslint.configs.recommended, fossil);
+export default defineConfig(tseslint.configs.recommended, dino);
 ```
 
 ```js

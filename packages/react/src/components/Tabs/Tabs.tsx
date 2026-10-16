@@ -46,7 +46,7 @@ export interface TabsProps {
    * such as Motion. Spread `className` onto it.
    */
   renderIndicator?: (props: { className: string }) => ReactNode;
-  /** Classes from the app's own stylesheet, added to Fossil's. */
+  /** Classes from the app's own stylesheet, added to Dino Design's. */
   className?: string;
 }
 

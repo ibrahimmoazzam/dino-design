@@ -31,7 +31,7 @@ export type LinkProps = Omit<ComponentPropsWithRef<'a'>, 'className'> & {
   asChild?: boolean;
   /** A decorative icon after the text, saying what the link or action does. */
   icon?: IconComponent;
-  /** Classes from the app's own stylesheet, added to Fossil's. */
+  /** Classes from the app's own stylesheet, added to Dino Design's. */
   className?: string;
 };
 

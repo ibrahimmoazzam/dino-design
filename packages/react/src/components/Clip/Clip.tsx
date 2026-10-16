@@ -22,7 +22,7 @@ export interface ClipProps {
   caption: ReactNode;
   /** Keeps the caption for assistive technology only, when the surrounding text already says it all. */
   captionHidden?: boolean;
-  /** Classes from the app's own stylesheet, added to Fossil's. */
+  /** Classes from the app's own stylesheet, added to Dino Design's. */
   className?: string;
 }
 

@@ -9,7 +9,7 @@ export const iconVariants = {
 export type IconSize = (typeof iconVariants.size)[number];
 
 export interface IconProps {
-  /** The SVG component: one of Fossil's, such as `CloseIcon`, or the app's own. */
+  /** The SVG component: one of Dino Design's, such as `CloseIcon`, or the app's own. */
   icon: IconComponent;
   /**
    * The accessible name, for an icon that means something on its own. Omit it when visible
@@ -19,7 +19,7 @@ export interface IconProps {
   label?: string;
   /** Omit it to match the surrounding text. */
   size?: IconSize;
-  /** Classes from the app's own stylesheet, added to Fossil's. */
+  /** Classes from the app's own stylesheet, added to Dino Design's. */
   className?: string;
 }
 
@@ -31,7 +31,7 @@ export interface IconProps {
  *
  * - An icon beside text that says the same thing in words: leave out `label`.
  * - An icon that means something on its own, with no text beside it: give it a `label`.
- * - One of Fossil's icons, such as `CloseIcon`, or any SVG component of the app's own.
+ * - One of Dino Design's icons, such as `CloseIcon`, or any SVG component of the app's own.
  *
  * ## When not to use
  *

@@ -5,7 +5,7 @@ import { keep } from '../scripts/rename.ts';
 
 const root = new URL('../', import.meta.url);
 
-/** Step 1.4 of the guide, which lists what still describes Fossil once a fork has renamed itself. */
+/** Step 1.4 of the guide, which lists what still describes Dino Design once a fork has renamed itself. */
 function step(heading: string, next: string): string {
   const guide = readFileSync(new URL('docs/adopting.md', root), 'utf8');
   const start = guide.indexOf(`### ${heading}`);
@@ -18,17 +18,17 @@ function step(heading: string, next: string): string {
 const checklist = step('1.4 ', '1.5 ');
 
 /**
- * The name step 1.4 is written about. Fossil's, until a fork rewrites this file with the rest of
- * 1.4's prose, after which it is the fork's own and the check still holds: every file that names
- * the system is in the checklist. A fork that rewrites the prose and not this line greps for a
- * name its files no longer carry, and the assertion below is what says so.
+ * The name step 1.4 is written about: this system's own, rewritten with the rest of 1.4's prose.
+ * A fork of this one rewrites it again, and the check still holds: every file that names the
+ * system is in the checklist. A fork that rewrites the prose and not this line greps for a name
+ * its files no longer carry, and the assertion below is what says so.
  */
-const system = 'Fossil';
+const system = 'Dino';
 
 /**
- * Every file whose prose still says Fossil after a rename. `pnpm rename` rewrites the names
+ * Every file whose prose still says Dino Design after a rename. `pnpm rename` rewrites the names
  * things are addressed by, never the word itself, so this is what step 1.4 has to account for.
- * `keep` holds the paths that record Fossil's own history, which the same rename skips.
+ * `keep` holds the paths that record the system's own history, which the same rename skips.
  */
 const described = execFileSync(
   'git',

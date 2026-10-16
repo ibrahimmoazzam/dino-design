@@ -179,7 +179,7 @@ export async function build(options: BuildOptions): Promise<BuildResult> {
       },
     },
   });
-  // Fossil's checks name the tokens involved, so they run before Style Dictionary's own.
+  // Dino Design's checks name the tokens involved, so they run before Style Dictionary's own.
   render.join(tokens, (await sd.getPlatformTokens('web')).allTokens);
   // Formats in memory, so nothing is written unless every output is valid.
   const outputs = await sd.formatPlatform('web');
